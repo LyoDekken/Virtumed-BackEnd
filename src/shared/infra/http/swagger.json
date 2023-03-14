@@ -1,0 +1,1753 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "API Virtumed",
+        "description": "API para médicos se contactarem com seus pacientes virtualmente.",
+        "license": {
+            "name": "MIT",
+            "url": "https://opensource.org/licenses/MIT"
+        },
+        "version": "1.0.0"
+    },
+    "servers": [
+        {
+            "url": "http://localhost:3333/api-docs",
+            "description": "API de desenvolvimento."
+        },
+        {
+            "url": "https://humberto.online/api-docs",
+            "description": "API de produção."
+        }
+    ],
+
+    "paths": {
+        "/admin/doctor": {
+            "post": {
+                "summary": "Cadastrar um doctor pelo admin",
+                "description": "Rota responsável por cadastrar um doctor pelo admin.",
+                "tags": ["Admin"],
+                "security": [{ "beaererAuth": [] }],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/Doctor"
+                            },
+                            "examples": {
+                                "Doctor": {
+                                    "value": {
+                                        "name": "Humberto Dararipe",
+                                        "email": "humbesrto.araripea12a@gmail.com",
+                                        "password": "SenhaForte123#",
+                                        "address": "Rua das Flores, 123",
+                                        "number": "456",
+                                        "city": "São Paulo",
+                                        "state": "São Paulo",
+                                        "cep": "12345-678",
+                                        "cpf": "123.456.789-00",
+                                        "district": "Jardim das Flores",
+                                        "speciality": "Cardiologista",
+                                        "crm": "1234SP"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "400": {
+                        "description": "Bad Request"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "201": {
+                        "description": "Created",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "$ref": "#/components/schemas/Doctor"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/admin/pacient": {
+            "post": {
+                "summary": "Criar o pacient pelo admin.",
+                "description": "Rota responsável por criar o pacient pelo admin.",
+                "tags": ["Admin"],
+                "security": [{ "beaererAuth": [] }],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/Pacient"
+                            },
+                            "examples": {
+                                "Pacient": {
+                                    "value": {
+                                        "name": "João Silva",
+                                        "rg": "123456789",
+                                        "cpf": "12345678910",
+                                        "cep": "12345678",
+                                        "address": "Rua das Flores",
+                                        "number": "123",
+                                        "city": "São Paulo",
+                                        "district": "Jardins",
+                                        "state": "SP",
+                                        "email": "joaosilva@email.com",
+                                        "password": "senha123"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "400": {
+                        "description": "Bad Request"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "201": {
+                        "description": "Created",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/Pacient"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/admin/clinic": {
+            "post": {
+                "summary": "Cadastrar uma clinica pelo admin.",
+                "description": "Rota responsável por cadastrar uma clinica pelo admin.",
+                "tags": ["Admin"],
+                "security": [{ "beaererAuth": [] }],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/Clinic"
+                            },
+                            "examples": {
+                                "Clinic": {
+                                    "value": {
+                                        "name": "Virtumed",
+                                        "email": "virtumed-prod@email.com",
+                                        "password": "123456",
+                                        "razao": "123456",
+                                        "cnpj": "123456",
+                                        "cep": "123456",
+                                        "address": "123456",
+                                        "number": "123456",
+                                        "city": "123456",
+                                        "district": "123456",
+                                        "state": "123456"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "400": {
+                        "description": "Bad Request"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "201": {
+                        "description": "Created",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "$ref": "#/components/schemas/Clinic"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/admin/pacient/": {
+            "put": {
+                "summary": "Editar um pacient sendo admin.",
+                "description": "Rota responsável por editar um pacient sendo admin.",
+                "tags": ["Admin"],
+                "security": [{ "beaererAuth": [] }],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/Pacient"
+                            },
+                            "examples": {
+                                "Pacient": {
+                                    "value": {
+                                        "id": "309113_391",
+                                        "rg": "123456789",
+                                        "cpf": "12345678910",
+                                        "cep": "12345678",
+                                        "address": "Rua das Flores",
+                                        "number": "123",
+                                        "city": "São Paulo",
+                                        "district": "Jardins",
+                                        "state": "SP"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "400": {
+                        "description": "Bad Request"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "$ref": "#/components/schemas/Pacient"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/admin/doctor/": {
+            "put": {
+                "summary": "Editar um doutor sendo admin.",
+                "description": "Rota responsável por editar um doutor sendo admin.",
+                "tags": ["Admin"],
+                "security": [{ "beaererAuth": [] }],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/Doctor"
+                            },
+                            "examples": {
+                                "Doctor": {
+                                    "value": {
+                                        "id": "",
+                                        "cep": "1234v56",
+                                        "cpf": "123v456",
+                                        "address": "123v456",
+                                        "number": "1236",
+                                        "city": "123v456",
+                                        "district": "123456",
+                                        "state": "123456",
+                                        "speciality": "Cirurgião.",
+                                        "crm": "dadaaa"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "400": {
+                        "description": "Bad Request"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "$ref": "#/components/schemas/Doctor"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/admin/clinic/": {
+            "put": {
+                "summary": "Editar uma clinica sendo admin.",
+                "description": "Rota responsável por editar uma clinica sendo admin.",
+                "tags": ["Admin"],
+                "security": [{ "beaererAuth": [] }],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/Clinic"
+                            },
+                            "examples": {
+                                "Clinic": {
+                                    "value": {
+                                        "id": "0b0ac9bd-5bfe-473d-b7b6-351d43d9fa27",
+                                        "razao": "12s3456",
+                                        "cnpj": "123456",
+                                        "cep": "1234d56",
+                                        "address": "12456",
+                                        "number": "13456",
+                                        "city": "123456",
+                                        "district": "123456",
+                                        "state": "123456"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "400": {
+                        "description": "Bad Request"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "$ref": "#/components/schemas/Clinic"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/admin/delete": {
+            "delete": {
+                "summary": "Apagar uma doctor pelo ID",
+                "description": "Rota responsável por apagar uma doctor pelo ID",
+                "tags": ["Admin"],
+                "security": [{ "beaererAuth": [] }],
+                "responses": {
+                    "400": {
+                        "description": "Bad Request"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "200": {
+                        "description": "OK"
+                    }
+                }
+            }
+        },
+        "/providers": {
+            "get": {
+                "summary": "Lista de todos os usuários.",
+                "description": "Rota responsável por listar todos os usuários.",
+                "tags": ["User"],
+                "security": [{ "beaererAuth": [] }],
+                "responses": {
+                    "404": {
+                        "description": "Not Found"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/User"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/doctors": {
+            "post": {
+                "summary": "Cadastrar um doctor",
+                "description": "Rota responsável por cadastrar um doctor",
+                "tags": ["Doctor"],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/Doctor"
+                            },
+                            "examples": {
+                                "Doctor": {
+                                    "value": {
+                                        "name": "Humberto Dararipe",
+                                        "email": "humbesrto.araripea12a@gmail.com",
+                                        "password": "SenhaForte123#",
+                                        "address": "Rua das Flores, 123",
+                                        "number": "456",
+                                        "city": "São Paulo",
+                                        "state": "São Paulo",
+                                        "cep": "12345-678",
+                                        "cpf": "123.456.789-00",
+                                        "district": "Jardim das Flores",
+                                        "speciality": "Cardiologista",
+                                        "crm": "1234SP"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "400": {
+                        "description": "Bad Request"
+                    },
+                    "201": {
+                        "description": "Created",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "$ref": "#/components/schemas/Doctor"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/providers/{id}/month-availability": {
+            "get": {
+                "summary": "Lista de todos os horários disponíveis do mês.",
+                "description": "Rota responsável por listar todos os horários disponíveis do mês.",
+                "tags": ["Schedule"],
+                "security": [{ "beaererAuth": [] }],
+                "responses": {
+                    "404": {
+                        "description": "Not Found"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/Schedule"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/providers/{id}/day-availability": {
+            "get": {
+                "summary": "Lista de todos os horários disponíveis do dia.",
+                "description": "Rota responsável por listar todos os horários disponíveis do dia.",
+                "tags": ["Schedule"],
+                "security": [{ "beaererAuth": [] }],
+                "responses": {
+                    "404": {
+                        "description": "Not Found"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/Schedule"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/findAllDoctors": {
+            "get": {
+                "summary": "Lista de todas os doutores",
+                "description": "Rota responsável por listar todas os doutores",
+                "tags": ["Doctor"],
+                "security": [{ "beaererAuth": [] }],
+                "responses": {
+                    "404": {
+                        "description": "Not Found"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/Doctor"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/profile/findDoctor": {
+            "post": {
+                "summary": "Busca uma doctor pelo ID",
+                "description": "Rota responsável por buscar um doctor pelo ID",
+                "tags": ["Profile"],
+                "security": [{ "beaererAuth": [] }],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/Doctor"
+                            },
+                            "examples": {
+                                "Doctor": {
+                                    "value": {
+                                        "id": "231oo3k1"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "400": {
+                        "description": "Bad Request"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "$ref": "#/components/schemas/Doctor"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/update-doctor/{id}": {
+            "put": {
+                "summary": "Editar um doctor pelo ID",
+                "description": "Rota responsável por editar um doctor pelo ID",
+                "tags": ["Doctor"],
+                "security": [{ "beaererAuth": [] }],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/Doctor"
+                            },
+                            "examples": {
+                                "Doctor": {
+                                    "value": {
+                                        "name": "Humberto Dararipe",
+                                        "email": "humbesrto.araripea12a@gmail.com",
+                                        "password": "SenhaForte123#",
+                                        "address": "Rua das Flores, 123",
+                                        "number": "456",
+                                        "city": "São Paulo",
+                                        "state": "São Paulo",
+                                        "cep": "12345-678",
+                                        "cpf": "123.456.789-00",
+                                        "district": "Jardim das Flores",
+                                        "speciality": "Cardiologista",
+                                        "crm": "1234SP"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "400": {
+                        "description": "Bad Request"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "$ref": "#/components/schemas/Doctor"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/profile/findPacient": {
+            "post": {
+                "summary": "Trazer um pacient por ID",
+                "description": "Rota responsável por trazer um pacient por id",
+                "tags": ["Profile"],
+                "security": [{ "beaererAuth": [] }],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/Doctor"
+                            },
+                            "examples": {
+                                "Doctor": {
+                                    "value": {
+                                        "id": "231oo3k1"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "404": {
+                        "description": "Not Found"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/Pacient"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/create-pacient": {
+            "post": {
+                "summary": "Criar o pacient",
+                "description": "Rota responsável por criar o pacient",
+                "tags": ["Pacient"],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/Pacient"
+                            },
+                            "examples": {
+                                "Pacient": {
+                                    "value": {
+                                        "name": "João Silva",
+                                        "rg": "123456789",
+                                        "cpf": "12345678910",
+                                        "cep": "12345678",
+                                        "address": "Rua das Flores",
+                                        "number": "123",
+                                        "city": "São Paulo",
+                                        "district": "Jardins",
+                                        "state": "SP",
+                                        "email": "joaosilva@email.com",
+                                        "password": "senha123"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "400": {
+                        "description": "Bad Request"
+                    },
+                    "201": {
+                        "description": "Created",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/Pacient"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/clinic": {
+            "post": {
+                "summary": "Cadastrar uma clinica",
+                "description": "Rota responsável por cadastrar uma clinica",
+                "tags": ["Clinic"],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/Clinic"
+                            },
+                            "examples": {
+                                "Clinic": {
+                                    "value": {
+                                        "name": "Virtumed",
+                                        "email": "virtumed-prod@email.com",
+                                        "password": "123456",
+                                        "razao": "123456",
+                                        "cnpj": "123456",
+                                        "cep": "123456",
+                                        "address": "123456",
+                                        "number": "123456",
+                                        "city": "123456",
+                                        "district": "123456",
+                                        "state": "123456"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "400": {
+                        "description": "Bad Request"
+                    },
+                    "201": {
+                        "description": "Created",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "$ref": "#/components/schemas/Clinic"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/pacient/": {
+            "put": {
+                "summary": "Editar um pacient ",
+                "description": "Rota responsável por editar um pacient ",
+                "tags": ["Pacient"],
+                "security": [{ "beaererAuth": [] }],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/Pacient"
+                            },
+                            "examples": {
+                                "Pacient": {
+                                    "value": {
+                                        "rg": "123456789",
+                                        "cpf": "12345678910",
+                                        "cep": "12345678",
+                                        "address": "Rua das Flores",
+                                        "number": "123",
+                                        "city": "São Paulo",
+                                        "district": "Jardins",
+                                        "state": "SP"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "400": {
+                        "description": "Bad Request"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "$ref": "#/components/schemas/Pacient"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/findAllPacients": {
+            "get": {
+                "summary": "Lista de todas os pacientes.",
+                "description": "Rota responsável por listar todas os pacientes.",
+                "tags": ["Pacient"],
+                "security": [{ "beaererAuth": [] }],
+                "responses": {
+                    "404": {
+                        "description": "Not Found"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/Pacient"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/clinic/doctor": {
+            "post": {
+                "summary": "Cadastrar um doctor pela clinica.",
+                "description": "Rota responsável por cadastrar um doctor pela clinica.",
+                "tags": ["Clinic"],
+                "security": [{ "beaererAuth": [] }],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/Doctor"
+                            },
+                            "examples": {
+                                "Doctor": {
+                                    "value": {
+                                        "name": "Humberto Dararipe",
+                                        "email": "humbesrto.araripea12a@gmail.com",
+                                        "password": "SenhaForte123#",
+                                        "address": "Rua das Flores, 123",
+                                        "number": "456",
+                                        "city": "São Paulo",
+                                        "state": "São Paulo",
+                                        "cep": "12345-678",
+                                        "cpf": "123.456.789-00",
+                                        "district": "Jardim das Flores",
+                                        "speciality": "Cardiologista",
+                                        "crm": "1234SP"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "400": {
+                        "description": "Bad Request"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "201": {
+                        "description": "Created",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "$ref": "#/components/schemas/Doctor"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/clinic/pacient": {
+            "post": {
+                "summary": "Cadastrar um pacient pela clinica.",
+                "description": "Rota responsável por cadastrar um pacient pela clinica.",
+                "tags": ["Clinic"],
+                "security": [{ "beaererAuth": [] }],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/Pacient"
+                            },
+                            "examples": {
+                                "Pacient": {
+                                    "value": {
+                                        "name": "João Silva",
+                                        "rg": "123456789",
+                                        "cpf": "12345678910",
+                                        "cep": "12345678",
+                                        "address": "Rua das Flores",
+                                        "number": "123",
+                                        "city": "São Paulo",
+                                        "district": "Jardins",
+                                        "state": "SP",
+                                        "email": "joaosilva@email.com",
+                                        "password": "senha123"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "400": {
+                        "description": "Bad Request"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "201": {
+                        "description": "Created",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "$ref": "#/components/schemas/Pacient"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/findAllClinics": {
+            "get": {
+                "summary": "Lista de todas as clinicas.",
+                "description": "Rota responsável por listar todas as clinicas.",
+                "tags": ["Clinic"],
+                "security": [{ "beaererAuth": [] }],
+                "responses": {
+                    "404": {
+                        "description": "Not Found"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/Clinic"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/findPacientsAndDoctor": {
+            "get": {
+                "summary": "Lista de todos os pacientes e doutores da clinica.",
+                "description": "Rota responsável por listar todos os pacientes e doutores da clinica",
+                "tags": ["Clinic"],
+                "security": [{ "beaererAuth": [] }],
+                "responses": {
+                    "404": {
+                        "description": "Not Found"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/Clinic"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/clinic/": {
+            "put": {
+                "summary": "Editar uma clinica ",
+                "description": "Rota responsável por editar uma clinica ",
+                "tags": ["Clinic"],
+                "security": [{ "beaererAuth": [] }],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/Clinic"
+                            },
+                            "examples": {
+                                "Clinic": {
+                                    "value": {
+                                        "razao": "123456",
+                                        "cnpj": "123456",
+                                        "cep": "123456",
+                                        "address": "12456",
+                                        "number": "13456",
+                                        "city": "123456",
+                                        "district": "123456",
+                                        "state": "123456"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "400": {
+                        "description": "Bad Request"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "$ref": "#/components/schemas/Clinic"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/appointments": {
+            "post": {
+                "summary": "Criar um agendamento com o doutor.",
+                "description": "Rota responsável por criar um agendamento com o doutor.",
+                "tags": ["Schedule"],
+                "security": [{ "beaererAuth": [] }],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/Appointments"
+                            },
+                            "examples": {
+                                "Pacient": {
+                                    "value": {
+                                        "provider_id": "cb30d452-5456-4d34-92e7-df99ca159b78",
+                                        "date": "2023-01-23 20:00:00"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "400": {
+                        "description": "Bad Request"
+                    },
+                    "201": {
+                        "description": "Created",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "$ref": "#/components/schemas/Appointments"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/appointments/me": {
+            "get": {
+                "summary": "Lista de todos os meus agendamentos.",
+                "description": "Rota responsável por listar todos os meus agendamentos.",
+                "tags": ["Schedule"],
+                "security": [{ "beaererAuth": [] }],
+                "responses": {
+                    "404": {
+                        "description": "Not Found"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/Appointments"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/passowrd/forgot": {
+            "post": {
+                "summary": "Recuperação de senha",
+                "description": "Rota responsável por recuperar a senha do usuário.",
+                "tags": ["Recovery"],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/Recovery"
+                            },
+                            "examples": {
+                                "Auth": {
+                                    "value": {
+                                        "email": "humberto.araripe12@hotmail.com"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "400": {
+                        "description": "Bad Request"
+                    },
+                    "201": {
+                        "description": "Autenticated",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "$ref": "#/components/schemas/Recovery"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/passowrd/reset": {
+            "post": {
+                "summary": "Mudar e resetar a senha de um usuário.",
+                "description": "Rota responsável por resetar e mudar a senha do usuário.",
+                "tags": ["Recovery"],
+                "security": [{ "beaererAuth": [] }],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/Recovery"
+                            },
+                            "examples": {
+                                "Auth": {
+                                    "value": {
+                                        "email": "humberto.araripe12@hotmail.com"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "400": {
+                        "description": "Bad Request"
+                    },
+                    "201": {
+                        "description": "Autenticated",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "$ref": "#/components/schemas/Recovery"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/login": {
+            "post": {
+                "summary": "Logar no servidor",
+                "description": "Rota responsável por autenticar o usuário",
+                "tags": ["Auth"],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/Login"
+                            },
+                            "examples": {
+                                "Auth": {
+                                    "value": {
+                                        "email": "admin@gmail.com",
+                                        "passowrd": "senhaforte1"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "400": {
+                        "description": "Bad Request"
+                    },
+                    "201": {
+                        "description": "Autenticated",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "$ref": "#/components/schemas/Login"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/medicalRecord": {
+            "post": {
+                "summary": "Criar prontuário do paciente.",
+                "description": "Rota responsável por criar o prontuário do paciente.",
+                "tags": ["MedicalRecord"],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/Pacient"
+                            },
+                            "examples": {
+                                "MedicalRecord": {
+                                    "value": {
+                                        "pacientId": "bd84e656-42e8-4aab-856a-f5ed12027dc0",
+                                        "diagnosis": "ad1f0a0fa48",
+                                        "observations": "fseg",
+                                        "date": "2023-01-27 01:00:00"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "400": {
+                        "description": "Bad Request"
+                    },
+                    "201": {
+                        "description": "Autenticated",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "$ref": "#/components/schemas/Pacient"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/medicalRecord/me/patient": {
+            "get": {
+                "summary": "Lista de todos os prontuários do paciente.",
+                "description": "Rota responsável por listar todos prontuários do paciente.",
+                "tags": ["MedicalRecord"],
+                "security": [{ "beaererAuth": [] }],
+                "responses": {
+                    "404": {
+                        "description": "Not Found"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/MedicalRecord"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/medicalRecord/me/doctor": {
+            "get": {
+                "summary": "Lista de todos os prontuários do paciente.",
+                "description": "Rota responsável por listar todos prontuários do doutor.",
+                "tags": ["MedicalRecord"],
+                "security": [{ "beaererAuth": [] }],
+                "responses": {
+                    "404": {
+                        "description": "Not Found"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/MedicalRecord"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/medicalRecord/me/doctor/": {
+            "get": {
+                "summary": "Lista de todos os prontuários do paciente.",
+                "description": "Rota responsável por listar todos prontuários feitos pelo doutor.",
+                "tags": ["MedicalRecord"],
+                "security": [{ "beaererAuth": [] }],
+                "responses": {
+                    "404": {
+                        "description": "Not Found"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/MedicalRecord"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/infoPacient": {
+            "post": {
+                "summary": "Adicionar informações do paciente.",
+                "description": "Rota responsável por adicionar informações a mais do paciente.",
+                "tags": ["InfoPatient"],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/infoPacient"
+                            },
+                            "examples": {
+                                "MedicalRecord": {
+                                    "value": {
+                                        "id": "bd84e656-42e8-4aab-856a-f5ed12027dc0",
+                                        "age": "ad8",
+                                        "height": "ad1f0a0fa48",
+                                        "gender": "adacf0a0fa48",
+                                        "weight": "fseg"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "400": {
+                        "description": "Bad Request"
+                    },
+                    "201": {
+                        "description": "Autenticated",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "$ref": "#/components/schemas/infoPacient"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/infoPacient/": {
+            "get": {
+                "summary": "Lista de todos as informações do paciente.",
+                "description": "Rota responsável por listar as informações do paciente.",
+                "tags": ["Pacient"],
+                "security": [{ "beaererAuth": []}],
+                "responses": {
+                    "404": {
+                        "description": "Not Found"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/infoPacient"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/favorites/": {
+            "post": {
+                "summary": "Adicionar um doutor favorito.",
+                "description": "Rota responsável por adicionar um doutor favorito.",
+                "tags": ["Pacient"],
+                "security": [{ "beaererAuth": [] }],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/Login"
+                            },
+                            "examples": {
+                                "Auth": {
+                                    "value": {
+                                        "email": "admin@gmail.com",
+                                        "passowrd": "senhaforte1"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "400": {
+                        "description": "Bad Request"
+                    },
+                    "201": {
+                        "description": "Autenticated",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "$ref": "#/components/schemas/Login"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/favorites/findAlll": {
+            "get": {
+                "summary": "Lista de todos as informações do paciente.",
+                "description": "Rota responsável por listar as informações do paciente.",
+                "tags": ["Pacient"],
+                "security": [{ "beaererAuth": [] }],
+                "responses": {
+                    "404": {
+                        "description": "Not Found"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/infoPacient"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "components": {
+        "schemas": {
+            "Pacient": {
+                "type": "object",
+                "properties": {
+                    "name": {
+                        "type": "string"
+                    },
+                    "passowrd": {
+                        "type": "string"
+                    },
+                    "cpf": {
+                        "type": "string"
+                    },
+                    "cep": {
+                        "type": "string"
+                    },
+                    "rg": {
+                        "type": "string"
+                    },
+                    "address": {
+                        "type": "string"
+                    },
+                    "number": {
+                        "type": "string"
+                    },
+                    "city": {
+                        "type": "string"
+                    },
+                    "district": {
+                        "type": "string"
+                    },
+
+                    "email": {
+                        "type": "string"
+                    },
+
+                    "state": {
+                        "type": "string"
+                    },
+
+                    "created_at": {
+                        "type": "string"
+                    },
+                    "updated_at": {
+                        "type": "string"
+                    }
+                }
+            },
+            "Doctor": {
+                "type": "object",
+                "properties": {
+                    "crm": {
+                        "type": "string"
+                    },
+                    "name": {
+                        "type": "string"
+                    },
+                    "passowrd": {
+                        "type": "string"
+                    },
+                    "cpf": {
+                        "type": "string"
+                    },
+                    "cep": {
+                        "type": "string"
+                    },
+                    "address": {
+                        "type": "string"
+                    },
+                    "number": {
+                        "type": "string"
+                    },
+                    "city": {
+                        "type": "string"
+                    },
+                    "district": {
+                        "type": "string"
+                    },
+
+                    "email": {
+                        "type": "string"
+                    },
+
+                    "state": {
+                        "type": "string"
+                    },
+
+                    "speciality": {
+                        "type": "string"
+                    },
+                    "created_at": {
+                        "type": "string"
+                    },
+                    "updated_at": {
+                        "type": "string"
+                    }
+                }
+            },
+            "Clinic": {
+                "type": "object",
+                "properties": {
+                    "razao": {
+                        "type": "string"
+                    },
+                    "name": {
+                        "type": "string"
+                    },
+                    "passowrd": {
+                        "type": "string"
+                    },
+                    "cnpj": {
+                        "type": "string"
+                    },
+                    "cep": {
+                        "type": "string"
+                    },
+                    "address": {
+                        "type": "string"
+                    },
+                    "number": {
+                        "type": "string"
+                    },
+                    "city": {
+                        "type": "string"
+                    },
+                    "district": {
+                        "type": "string"
+                    },
+
+                    "email": {
+                        "type": "string"
+                    },
+
+                    "state": {
+                        "type": "string"
+                    },
+                    "created_at": {
+                        "type": "string"
+                    },
+                    "updated_at": {
+                        "type": "string"
+                    }
+                }
+            },
+            "Login": {
+                "type": "object",
+                "properties": {
+                    "passowrd": {
+                        "type": "string"
+                    },
+                    "email": {
+                        "type": "string"
+                    },
+                    "token": {
+                        "type": "string"
+                    }
+                }
+            },
+            "Recovery": {
+                "type": "object",
+                "properties": {
+                    "email": {
+                        "type": "string"
+                    }
+                }
+            },
+            "MedicalRecord": {
+                "type": "object",
+                "properties": {
+                    "pacientId": {
+                        "type": "string"
+                    },
+                    "diagnosis": {
+                        "type": "string"
+                    },
+                    "observations": {
+                        "type": "string"
+                    },
+
+                    "date": {
+                        "type": "string"
+                    }
+                }
+            },
+            "infoPacient": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "string"
+                    },
+                    "age": {
+                        "type": "string"
+                    },
+                    "height ": {
+                        "type": "string"
+                    },
+                    "gender": {
+                        "type": "string"
+                    },
+                    "weight": {
+                        "type": "string"
+                    }
+                }
+            },
+            "Schedule": {
+                "type": "object",
+                "properties": {
+                    "provider_id": {
+                        "type": "string"
+                    },
+                    "date": {
+                        "type": "string"
+                    }
+                }
+            }
+        },
+        "securitySchemes": {
+            "bearerAuth": {
+                "type": "http",
+                "scheme": "bearer",
+                "bearerFormat": "JWT"
+            }
+        }
+    }
+}

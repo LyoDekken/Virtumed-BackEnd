@@ -1,0 +1,9 @@
+.idea/
+node_modules/
+build/
+.env
+dist
+tmp
+ormconfig.json
+!tmp/.gitkeep
+insominia.json

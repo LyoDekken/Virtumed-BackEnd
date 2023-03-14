@@ -1,0 +1,47 @@
+{
+    "compilerOptions": {
+        "types": [
+            "jest",
+            "node"
+        ],
+        "target": "ES6",
+        "lib": [
+            "ES5",
+            "ES6",
+            "ES2018",
+            "ES2022"
+        ],
+        "sourceMap": true,
+        "module": "commonjs",
+        "outDir": "./dist",
+        "rootDir": "./src",
+        "strict": true,
+        "strictPropertyInitialization": false,
+        "allowJs": true,
+        "baseUrl": "./src",
+        "paths": {
+            "@modules/*": [
+                "modules/*"
+            ],
+            "@config/*": [
+                "config/*"
+            ],
+            "@shared/*": [
+                "shared/*"
+            ],
+            "@auth/*": [
+                "shared/infra/http/middlewares/*"
+            ]
+        },
+        "experimentalDecorators": true,
+        "emitDecoratorMetadata": true,
+        "esModuleInterop": true,
+        "forceConsistentCasingInFileNames": true,
+        "resolveJsonModule": true,
+    },
+    "include": [
+        "dist/**/*.js",
+        "src/**/*.ts",
+        "src/shared/infra/http/server/socketServer.js",
+    ],
+}

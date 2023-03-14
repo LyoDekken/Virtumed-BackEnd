@@ -1,0 +1,2231 @@
+{
+    "_type": "export",
+    "__export_format": 4,
+    "__export_date": "2023-02-03T17:56:07.561Z",
+    "__export_source": "insomnia.desktop.app:v2022.7.5",
+    "resources": [
+        {
+            "_id": "req_ab4f3203e74a443fb8100de375247c3e",
+            "parentId": "fld_007950870540484490b3556e5c6dd980",
+            "modified": 1675368872926,
+            "created": 1675356125134,
+            "url": "{{ base_url  }}/favorites/",
+            "name": "CreatedDoctorFavorite",
+            "description": "",
+            "method": "POST",
+            "body": {
+                "mimeType": "application/json",
+                "text": "{\n\t\"doctor_id\":\"bb954cef-639a-434c-81d7-a0b4f0936c2c\"\n}"
+            },
+            "parameters": [],
+            "headers": [
+                { "name": "Content-Type", "value": "application/json" }
+            ],
+            "authentication": {
+                "type": "bearer",
+                "token": "{% response 'body', 'req_cf3c05e410f24fc08f196e9a9dd7adb8', 'b64::JC50b2tlbg==::46b', 'no-history' %}"
+            },
+            "metaSortKey": -1675356125134,
+            "isPrivate": false,
+            "settingStoreCookies": true,
+            "settingSendCookies": true,
+            "settingDisableRenderRequestBody": false,
+            "settingEncodeUrl": true,
+            "settingRebuildPath": true,
+            "settingFollowRedirects": "global",
+            "_type": "request"
+        },
+        {
+            "_id": "fld_007950870540484490b3556e5c6dd980",
+            "parentId": "wrk_469e2b2fdab4472db29462e16dee00af",
+            "modified": 1675356061588,
+            "created": 1675356061588,
+            "name": "FavoriteDoctors",
+            "description": "",
+            "environment": {},
+            "environmentPropertyOrder": null,
+            "metaSortKey": -1675356061588,
+            "_type": "request_group"
+        },
+        {
+            "_id": "wrk_469e2b2fdab4472db29462e16dee00af",
+            "parentId": null,
+            "modified": 1672884692994,
+            "created": 1586901705539,
+            "name": "Virtumed",
+            "description": "",
+            "scope": "collection",
+            "_type": "workspace"
+        },
+        {
+            "_id": "req_5dfac1371e6c4be1811f8f8b50cedbb6",
+            "parentId": "fld_007950870540484490b3556e5c6dd980",
+            "modified": 1675356485395,
+            "created": 1675356120430,
+            "url": "{{ base_url  }}/favorites/findAll",
+            "name": "FindDoctorFavorite",
+            "description": "",
+            "method": "GET",
+            "body": {},
+            "parameters": [],
+            "headers": [],
+            "authentication": {
+                "type": "bearer",
+                "token": "{% response 'body', 'req_cf3c05e410f24fc08f196e9a9dd7adb8', 'b64::JC50b2tlbg==::46b', 'no-history' %}"
+            },
+            "metaSortKey": -1675356120430,
+            "isPrivate": false,
+            "settingStoreCookies": true,
+            "settingSendCookies": true,
+            "settingDisableRenderRequestBody": false,
+            "settingEncodeUrl": true,
+            "settingRebuildPath": true,
+            "settingFollowRedirects": "global",
+            "_type": "request"
+        },
+        {
+            "_id": "req_fff86b5864ad4732af09930c79506187",
+            "parentId": "fld_4c4e374ce9994ff880c8847294a3900b",
+            "modified": 1674954865354,
+            "created": 1674945225379,
+            "url": "{{ base_url  }}/s3medicalRecord/send",
+            "name": "SendDocumentForS3",
+            "description": "",
+            "method": "POST",
+            "body": {
+                "mimeType": "multipart/form-data",
+                "params": [
+                    {
+                        "id": "pair_af95244ce61e44d58dc7272d83475154",
+                        "name": "diagnosis_file",
+                        "value": "",
+                        "description": "",
+                        "type": "file",
+                        "fileName": "C:\\Users\\omadt\\Downloads\\fuvest2023_chamada_1.pdf"
+                    }
+                ]
+            },
+            "parameters": [
+                {
+                    "id": "pair_1cc5801c494448359c2ab04ea0abf3b9",
+                    "name": "pacient_id",
+                    "value": "bd84e656-42e8-4aab-856a-f5ed12027dc0",
+                    "description": ""
+                },
+                {
+                    "id": "pair_6e482e9e0fd7445d83cd5f52f7b97354",
+                    "name": "diagnosis",
+                    "value": "hemorragia",
+                    "description": ""
+                }
+            ],
+            "headers": [
+                { "name": "Content-Type", "value": "multipart/form-data" }
+            ],
+            "authentication": {
+                "type": "bearer",
+                "token": "{% response 'body', 'req_cf3c05e410f24fc08f196e9a9dd7adb8', 'b64::JC50b2tlbg==::46b', 'no-history' %}"
+            },
+            "metaSortKey": -1674945225379,
+            "isPrivate": false,
+            "settingStoreCookies": true,
+            "settingSendCookies": true,
+            "settingDisableRenderRequestBody": false,
+            "settingEncodeUrl": true,
+            "settingRebuildPath": true,
+            "settingFollowRedirects": "global",
+            "_type": "request"
+        },
+        {
+            "_id": "fld_4c4e374ce9994ff880c8847294a3900b",
+            "parentId": "fld_e57701b7d58444c3934924a6f754a051",
+            "modified": 1674945219585,
+            "created": 1674945219585,
+            "name": "S3Folder",
+            "description": "",
+            "environment": {},
+            "environmentPropertyOrder": null,
+            "metaSortKey": -1674945219585,
+            "_type": "request_group"
+        },
+        {
+            "_id": "fld_e57701b7d58444c3934924a6f754a051",
+            "parentId": "wrk_469e2b2fdab4472db29462e16dee00af",
+            "modified": 1674789003384,
+            "created": 1674789003384,
+            "name": "MedicalRecord",
+            "description": "",
+            "environment": {},
+            "environmentPropertyOrder": null,
+            "metaSortKey": -1674789003384,
+            "_type": "request_group"
+        },
+        {
+            "_id": "req_48c4e14306094566a3bc4a205cd02144",
+            "parentId": "fld_4c4e374ce9994ff880c8847294a3900b",
+            "modified": 1675206878995,
+            "created": 1674945276916,
+            "url": "{{ base_url  }}/medicalRecord/me/doctor",
+            "name": "FindMedicalDocumentForS3",
+            "description": "",
+            "method": "GET",
+            "body": {},
+            "parameters": [],
+            "headers": [],
+            "authentication": {
+                "type": "bearer",
+                "token": "{% response 'body', 'req_cf3c05e410f24fc08f196e9a9dd7adb8', 'b64::JC50b2tlbg==::46b', 'no-history' %}"
+            },
+            "metaSortKey": -1674902695497,
+            "isPrivate": false,
+            "settingStoreCookies": true,
+            "settingSendCookies": true,
+            "settingDisableRenderRequestBody": false,
+            "settingEncodeUrl": true,
+            "settingRebuildPath": true,
+            "settingFollowRedirects": "global",
+            "_type": "request"
+        },
+        {
+            "_id": "req_395ca499301b4f4fbf0070b67efcdb64",
+            "parentId": "fld_e57701b7d58444c3934924a6f754a051",
+            "modified": 1674867178228,
+            "created": 1674860158350,
+            "url": "{{ base_url  }}/medicalRecord/me/doctor",
+            "name": "FindHistoryClinicDoctor",
+            "description": "",
+            "method": "GET",
+            "body": {},
+            "parameters": [],
+            "headers": [],
+            "authentication": {
+                "type": "bearer",
+                "token": "{% response 'body', 'req_cf3c05e410f24fc08f196e9a9dd7adb8', 'b64::JC50b2tlbg==::46b', 'no-history' %}"
+            },
+            "metaSortKey": -1674860158350,
+            "isPrivate": false,
+            "settingStoreCookies": true,
+            "settingSendCookies": true,
+            "settingDisableRenderRequestBody": false,
+            "settingEncodeUrl": true,
+            "settingRebuildPath": true,
+            "settingFollowRedirects": "global",
+            "_type": "request"
+        },
+        {
+            "_id": "req_9e771bb016ee48dc9c6b10238d0ac893",
+            "parentId": "fld_e57701b7d58444c3934924a6f754a051",
+            "modified": 1674867172538,
+            "created": 1674867114676,
+            "url": "{{ base_url  }}/medicalRecord/doctor",
+            "name": "FindHistoryClinicDoctorBody",
+            "description": "",
+            "method": "GET",
+            "body": {
+                "mimeType": "application/json",
+                "text": "{\n\t\"id\":\"bd84e656-42e8-4aab-856a-f5ed12027dc0\"\n}"
+            },
+            "parameters": [],
+            "headers": [
+                { "name": "Content-Type", "value": "application/json" }
+            ],
+            "authentication": {
+                "type": "bearer",
+                "token": "{% response 'body', 'req_cf3c05e410f24fc08f196e9a9dd7adb8', 'b64::JC50b2tlbg==::46b', 'no-history' %}"
+            },
+            "metaSortKey": -1674842382466.75,
+            "isPrivate": false,
+            "settingStoreCookies": true,
+            "settingSendCookies": true,
+            "settingDisableRenderRequestBody": false,
+            "settingEncodeUrl": true,
+            "settingRebuildPath": true,
+            "settingFollowRedirects": "global",
+            "_type": "request"
+        },
+        {
+            "_id": "req_a30767ce98044d309a30dc5cf852187f",
+            "parentId": "fld_e57701b7d58444c3934924a6f754a051",
+            "modified": 1674867187740,
+            "created": 1674863471659,
+            "url": "{{ base_url  }}/medicalRecord/me/patient",
+            "name": "FindHistoryClinicPatient",
+            "description": "",
+            "method": "GET",
+            "body": {},
+            "parameters": [],
+            "headers": [],
+            "authentication": {
+                "type": "bearer",
+                "token": "{% response 'body', 'req_cf3c05e410f24fc08f196e9a9dd7adb8', 'b64::JC50b2tlbg==::46b', 'no-history' %}"
+            },
+            "metaSortKey": -1674824606583.5,
+            "isPrivate": false,
+            "settingStoreCookies": true,
+            "settingSendCookies": true,
+            "settingDisableRenderRequestBody": false,
+            "settingEncodeUrl": true,
+            "settingRebuildPath": true,
+            "settingFollowRedirects": "global",
+            "_type": "request"
+        },
+        {
+            "_id": "req_0b95fd9e08c4430cadbc88703c5816bc",
+            "parentId": "fld_e57701b7d58444c3934924a6f754a051",
+            "modified": 1674867198328,
+            "created": 1674867120318,
+            "url": "{{ base_url  }}/medicalRecord/patient",
+            "name": "FindHistoryClinicPatientBody",
+            "description": "",
+            "method": "GET",
+            "body": {
+                "mimeType": "application/json",
+                "text": "{\n\t\"id\": \"bd84e656-42e8-4aab-856a-f5ed12027dc0\"\n}"
+            },
+            "parameters": [],
+            "headers": [
+                { "name": "Content-Type", "value": "application/json" }
+            ],
+            "authentication": {
+                "type": "bearer",
+                "token": "{% response 'body', 'req_cf3c05e410f24fc08f196e9a9dd7adb8', 'b64::JC50b2tlbg==::46b', 'no-history' %}"
+            },
+            "metaSortKey": -1674806830700.25,
+            "isPrivate": false,
+            "settingStoreCookies": true,
+            "settingSendCookies": true,
+            "settingDisableRenderRequestBody": false,
+            "settingEncodeUrl": true,
+            "settingRebuildPath": true,
+            "settingFollowRedirects": "global",
+            "_type": "request"
+        },
+        {
+            "_id": "req_2d85d404fd6e4509ab47ad9407f3faf1",
+            "parentId": "fld_e57701b7d58444c3934924a6f754a051",
+            "modified": 1674789384400,
+            "created": 1674789054817,
+            "url": "{{ base_url  }}/medicalRecord",
+            "name": "HistoricClinic",
+            "description": "",
+            "method": "POST",
+            "body": {
+                "mimeType": "application/json",
+                "text": "{\n\t\"pacientId\":\"bd84e656-42e8-4aab-856a-f5ed12027dc0\",\n\t\"diagnosis\":\"ad1f0a0fa48\",\t\n\t\"observations\":\"fseg\",\n  \"date\": \"2023-01-27 01:00:00\"\n}"
+            },
+            "parameters": [],
+            "headers": [
+                { "name": "Content-Type", "value": "application/json" }
+            ],
+            "authentication": {
+                "type": "bearer",
+                "token": "{% response 'body', 'req_cf3c05e410f24fc08f196e9a9dd7adb8', 'b64::JC50b2tlbg==::46b', 'no-history' %}"
+            },
+            "metaSortKey": -1674789054817,
+            "isPrivate": false,
+            "settingStoreCookies": true,
+            "settingSendCookies": true,
+            "settingDisableRenderRequestBody": false,
+            "settingEncodeUrl": true,
+            "settingRebuildPath": true,
+            "settingFollowRedirects": "global",
+            "_type": "request"
+        },
+        {
+            "_id": "req_f703cdcf4d1046908702d46de11ca9fa",
+            "parentId": "fld_025a2a24e99a4d8dae5f0c4901f8b4bd",
+            "modified": 1674860206256,
+            "created": 1674860165615,
+            "url": "{{ base_url  }}/infoPacient",
+            "name": "findMyInfoPatient",
+            "description": "",
+            "method": "GET",
+            "body": {},
+            "parameters": [],
+            "headers": [],
+            "authentication": {
+                "type": "bearer",
+                "token": "{% response 'body', 'req_cf3c05e410f24fc08f196e9a9dd7adb8', 'b64::JC50b2tlbg==::46b', 'no-history' %}"
+            },
+            "metaSortKey": -1674860165615,
+            "isPrivate": false,
+            "settingStoreCookies": true,
+            "settingSendCookies": true,
+            "settingDisableRenderRequestBody": false,
+            "settingEncodeUrl": true,
+            "settingRebuildPath": true,
+            "settingFollowRedirects": "global",
+            "_type": "request"
+        },
+        {
+            "_id": "fld_025a2a24e99a4d8dae5f0c4901f8b4bd",
+            "parentId": "wrk_469e2b2fdab4472db29462e16dee00af",
+            "modified": 1674773530513,
+            "created": 1674773530513,
+            "name": "InfoPacients",
+            "description": "",
+            "environment": {},
+            "environmentPropertyOrder": null,
+            "metaSortKey": -1674773530513,
+            "_type": "request_group"
+        },
+        {
+            "_id": "req_44ad1906739345d1924bbb876a8d6900",
+            "parentId": "fld_025a2a24e99a4d8dae5f0c4901f8b4bd",
+            "modified": 1674861982432,
+            "created": 1674861396617,
+            "url": "{{ base_url  }}/infoPacient/doctor",
+            "name": "findMyInfoPatientForDoctor",
+            "description": "",
+            "method": "GET",
+            "body": {
+                "mimeType": "application/json",
+                "text": "{\n\t\"id\": \"bd84e656-42e8-4aab-856a-f5ed12027dc0\"\n}"
+            },
+            "parameters": [],
+            "headers": [
+                { "name": "Content-Type", "value": "application/json" }
+            ],
+            "authentication": {
+                "type": "bearer",
+                "token": "{% response 'body', 'req_cf3c05e410f24fc08f196e9a9dd7adb8', 'b64::JC50b2tlbg==::46b', 'no-history' %}"
+            },
+            "metaSortKey": -1674860161982.5,
+            "isPrivate": false,
+            "settingStoreCookies": true,
+            "settingSendCookies": true,
+            "settingDisableRenderRequestBody": false,
+            "settingEncodeUrl": true,
+            "settingRebuildPath": true,
+            "settingFollowRedirects": "global",
+            "_type": "request"
+        },
+        {
+            "_id": "req_b85c535f8b0c439b9fad08e4339f64e4",
+            "parentId": "fld_025a2a24e99a4d8dae5f0c4901f8b4bd",
+            "modified": 1674774704591,
+            "created": 1674773536045,
+            "url": "{{ base_url  }}/infoPacient",
+            "name": "InfoPacient",
+            "description": "",
+            "method": "POST",
+            "body": {
+                "mimeType": "application/json",
+                "text": "{\n\t\"id\": \"bd84e656-42e8-4aab-856a-f5ed12027dc0\",\n\t\"age\":\"ad8\",\n\t\"height\":\"ad1f0a0fa48\",\t\n\t\"gender\":\"adacf0a0fa48\",\t\n\t\"weight\":\"fseg\"\n}"
+            },
+            "parameters": [],
+            "headers": [
+                { "name": "Content-Type", "value": "application/json" }
+            ],
+            "authentication": {
+                "type": "bearer",
+                "token": "{% response 'body', 'req_cf3c05e410f24fc08f196e9a9dd7adb8', 'b64::JC50b2tlbg==::46b', 'no-history' %}"
+            },
+            "metaSortKey": -1674773536045,
+            "isPrivate": false,
+            "settingStoreCookies": true,
+            "settingSendCookies": true,
+            "settingDisableRenderRequestBody": false,
+            "settingEncodeUrl": true,
+            "settingRebuildPath": true,
+            "settingFollowRedirects": "global",
+            "_type": "request"
+        },
+        {
+            "_id": "req_f632ea61f22a4d81bcf8ad4485e47e21",
+            "parentId": "fld_628e14cbdcbf4a1fa32ad4a6dfe0903a",
+            "modified": 1675444539746,
+            "created": 1674159773635,
+            "url": "{{ base_url  }}/conversations",
+            "name": "newConversations",
+            "description": "",
+            "method": "POST",
+            "body": {
+                "mimeType": "application/json",
+                "text": "{\n\t\"senderId\": \"6823fe9d-4eaf-4c62-894a-e6a434a3dc19\",\n\t\"receiverId\":\"95ab00e8-88aa-4fe0-a04e-729808bfc7e3\"\n}"
+            },
+            "parameters": [],
+            "headers": [
+                { "name": "Content-Type", "value": "application/json" }
+            ],
+            "authentication": {
+                "type": "bearer",
+                "token": "{% response 'body', 'req_cf3c05e410f24fc08f196e9a9dd7adb8', 'b64::JC50b2tlbg==::46b', 'no-history' %}"
+            },
+            "metaSortKey": -1674611481608,
+            "isPrivate": false,
+            "settingStoreCookies": true,
+            "settingSendCookies": true,
+            "settingDisableRenderRequestBody": false,
+            "settingEncodeUrl": true,
+            "settingRebuildPath": true,
+            "settingFollowRedirects": "global",
+            "_type": "request"
+        },
+        {
+            "_id": "fld_628e14cbdcbf4a1fa32ad4a6dfe0903a",
+            "parentId": "fld_ae1a76be0a0944d1bc7070063ed924db",
+            "modified": 1674611506034,
+            "created": 1674611506034,
+            "name": "Conversations",
+            "description": "",
+            "environment": {},
+            "environmentPropertyOrder": null,
+            "metaSortKey": -1674611506034,
+            "_type": "request_group"
+        },
+        {
+            "_id": "fld_ae1a76be0a0944d1bc7070063ed924db",
+            "parentId": "wrk_469e2b2fdab4472db29462e16dee00af",
+            "modified": 1674159846709,
+            "created": 1674159769883,
+            "name": "Chat",
+            "description": "",
+            "environment": {},
+            "environmentPropertyOrder": null,
+            "metaSortKey": -1674159769883,
+            "_type": "request_group"
+        },
+        {
+            "_id": "req_83beab2222dc45bc9f1682dc12e39f93",
+            "parentId": "fld_628e14cbdcbf4a1fa32ad4a6dfe0903a",
+            "modified": 1675444579895,
+            "created": 1674611441877,
+            "url": "{{ base_url  }}/conversations/6823fe9d-4eaf-4c62-894a-e6a434a3dc19",
+            "name": "getConversations",
+            "description": "",
+            "method": "GET",
+            "body": {},
+            "parameters": [],
+            "headers": [],
+            "authentication": {
+                "type": "bearer",
+                "token": "{% response 'body', 'req_cf3c05e410f24fc08f196e9a9dd7adb8', 'b64::JC50b2tlbg==::46b', 'no-history' %}"
+            },
+            "metaSortKey": -1674611481533,
+            "isPrivate": false,
+            "settingStoreCookies": true,
+            "settingSendCookies": true,
+            "settingDisableRenderRequestBody": false,
+            "settingEncodeUrl": true,
+            "settingRebuildPath": true,
+            "settingFollowRedirects": "global",
+            "_type": "request"
+        },
+        {
+            "_id": "req_c490a5488bb64d8d9168b0a78f8dadf1",
+            "parentId": "fld_c6476e8f266c439f95b44e82a984ac21",
+            "modified": 1675446788822,
+            "created": 1674611440717,
+            "url": "{{ base_url  }}/messages",
+            "name": "NewMessage",
+            "description": "",
+            "method": "POST",
+            "body": {
+                "mimeType": "application/json",
+                "text": "{\n\t\"conversationId\": \"eb9e385f-6127-4075-8f72-cac3775e756b\",\n\t\"sender\": \"6823fe9d-4eaf-4c62-894a-e6a434a3dc19\",\n\t\"text\": \"hey, how are you?\"\n}"
+            },
+            "parameters": [],
+            "headers": [
+                { "name": "Content-Type", "value": "application/json" }
+            ],
+            "authentication": {
+                "type": "bearer",
+                "token": "{% response 'body', 'req_cf3c05e410f24fc08f196e9a9dd7adb8', 'b64::JC50b2tlbg==::46b', 'no-history' %}"
+            },
+            "metaSortKey": -1674611467801,
+            "isPrivate": false,
+            "settingStoreCookies": true,
+            "settingSendCookies": true,
+            "settingDisableRenderRequestBody": false,
+            "settingEncodeUrl": true,
+            "settingRebuildPath": true,
+            "settingFollowRedirects": "global",
+            "_type": "request"
+        },
+        {
+            "_id": "fld_c6476e8f266c439f95b44e82a984ac21",
+            "parentId": "fld_ae1a76be0a0944d1bc7070063ed924db",
+            "modified": 1674611494885,
+            "created": 1674611494885,
+            "name": "Messages",
+            "description": "",
+            "environment": {},
+            "environmentPropertyOrder": null,
+            "metaSortKey": -1674611494885,
+            "_type": "request_group"
+        },
+        {
+            "_id": "req_3fa2ecb6223445cba6e5db65752d3ff9",
+            "parentId": "fld_c6476e8f266c439f95b44e82a984ac21",
+            "modified": 1675446815480,
+            "created": 1674611439365,
+            "url": "{{ base_url  }}/messages/eb9e385f-6127-4075-8f72-cac3775e756b",
+            "name": "getMessages",
+            "description": "",
+            "method": "GET",
+            "body": {},
+            "parameters": [],
+            "headers": [],
+            "authentication": {
+                "type": "bearer",
+                "token": "{% response 'body', 'req_cf3c05e410f24fc08f196e9a9dd7adb8', 'b64::JC50b2tlbg==::46b', 'no-history' %}"
+            },
+            "metaSortKey": -1674611467751,
+            "isPrivate": false,
+            "settingStoreCookies": true,
+            "settingSendCookies": true,
+            "settingDisableRenderRequestBody": false,
+            "settingEncodeUrl": true,
+            "settingRebuildPath": true,
+            "settingFollowRedirects": "global",
+            "_type": "request"
+        },
+        {
+            "_id": "req_890899481329442d89a94523d916b46a",
+            "parentId": "fld_53c90c87d04c4a7db64ffa222a940185",
+            "modified": 1674754783731,
+            "created": 1674234993924,
+            "url": "{{ base_url  }}/{{ resource  }}/delete",
+            "name": "Delete User",
+            "description": "",
+            "method": "DELETE",
+            "body": {
+                "mimeType": "application/json",
+                "text": "{\n\t\"id\": \"99ebf496-3cde-4b09-9151-c931387004fb\"\n}"
+            },
+            "parameters": [],
+            "headers": [
+                { "name": "Content-Type", "value": "application/json" }
+            ],
+            "authentication": {
+                "type": "bearer",
+                "token": "{% response 'body', 'req_cf3c05e410f24fc08f196e9a9dd7adb8', 'b64::JC50b2tlbg==::46b', 'no-history' %}"
+            },
+            "metaSortKey": -1674234993924,
+            "isPrivate": false,
+            "settingStoreCookies": true,
+            "settingSendCookies": true,
+            "settingDisableRenderRequestBody": false,
+            "settingEncodeUrl": true,
+            "settingRebuildPath": true,
+            "settingFollowRedirects": "global",
+            "_type": "request"
+        },
+        {
+            "_id": "fld_53c90c87d04c4a7db64ffa222a940185",
+            "parentId": "wrk_469e2b2fdab4472db29462e16dee00af",
+            "modified": 1674073372263,
+            "created": 1674073255474,
+            "name": "Admin",
+            "description": "",
+            "environment": { "resource": "admin" },
+            "environmentPropertyOrder": { "&": ["resource"] },
+            "metaSortKey": -1674073255474,
+            "_type": "request_group"
+        },
+        {
+            "_id": "req_204ae96e0f74435fa19a252ebe1c1a28",
+            "parentId": "fld_3d3ca1772de54aa6b505d0c48f543090",
+            "modified": 1674598688181,
+            "created": 1674073273110,
+            "url": "{{ base_url  }}/{{ resource  }}/doctor",
+            "name": "Create-Doctor",
+            "description": "",
+            "method": "POST",
+            "body": {
+                "mimeType": "application/json",
+                "text": "{\n\"name\": \"Humberto araripe\",\n\"email\": \"humberto.araripe12@gmail.com\",\n\"password\": \"123456\",\n\"address\": \"Rua das Flores, 123\",\n\"number\": \"456\",\n\"city\": \"São Paulo\",\n\"state\": \"São Paulo\",\n\"cep\": \"12345-678\",\n\"cpf\": \"123.456.789-00\",\n\"district\": \"Jardim das Flores\",\n\"speciality\": \"Cardiologista\",\n\"crm\": \"1234SP\"\n}\n"
+            },
+            "parameters": [],
+            "headers": [
+                {
+                    "id": "pair_8f7bace5eeb9437ea1858aa9cf12a2a2",
+                    "name": "Content-Type",
+                    "value": "application/json"
+                }
+            ],
+            "authentication": {
+                "token": "{% response 'body', 'req_cf3c05e410f24fc08f196e9a9dd7adb8', 'b64::JC50b2tlbg==::46b', 'no-history' %}",
+                "type": "bearer"
+            },
+            "metaSortKey": -1673129018924,
+            "isPrivate": false,
+            "settingStoreCookies": true,
+            "settingSendCookies": true,
+            "settingDisableRenderRequestBody": false,
+            "settingEncodeUrl": true,
+            "settingRebuildPath": true,
+            "settingFollowRedirects": "global",
+            "_type": "request"
+        },
+        {
+            "_id": "fld_3d3ca1772de54aa6b505d0c48f543090",
+            "parentId": "fld_53c90c87d04c4a7db64ffa222a940185",
+            "modified": 1674073458479,
+            "created": 1674073458479,
+            "name": "Creates",
+            "description": "",
+            "environment": {},
+            "environmentPropertyOrder": null,
+            "metaSortKey": -1674073458479,
+            "_type": "request_group"
+        },
+        {
+            "_id": "req_3ea53a5a8d814214a08073ab2b01ed56",
+            "parentId": "fld_3d3ca1772de54aa6b505d0c48f543090",
+            "modified": 1674598692967,
+            "created": 1674073311536,
+            "url": "{{ base_url  }}/{{ resource  }}/pacient",
+            "name": "Create-Pacient",
+            "description": "",
+            "method": "POST",
+            "body": {
+                "mimeType": "application/json",
+                "text": "{\n    \"name\": \"João Silva\",\n    \"rg\": \"123456789\",\n    \"cpf\": \"12345678910\",\n    \"cep\": \"12345678\",\n    \"address\": \"Rua das Flores\",\n    \"number\": \"123\",\n    \"city\": \"São Paulo\",\n    \"district\": \"Jardins\",\n    \"state\": \"SP\",\n    \"email\": \"joaosilva@email.com\",\n    \"password\": \"senha123\"\n}"
+            },
+            "parameters": [],
+            "headers": [
+                {
+                    "id": "pair_8f7bace5eeb9437ea1858aa9cf12a2a2",
+                    "name": "Content-Type",
+                    "value": "application/json"
+                }
+            ],
+            "authentication": {
+                "token": "{% response 'body', 'req_cf3c05e410f24fc08f196e9a9dd7adb8', 'b64::JC50b2tlbg==::46b', 'no-history' %}",
+                "type": "bearer"
+            },
+            "metaSortKey": -1673129018874,
+            "isPrivate": false,
+            "settingStoreCookies": true,
+            "settingSendCookies": true,
+            "settingDisableRenderRequestBody": false,
+            "settingEncodeUrl": true,
+            "settingRebuildPath": true,
+            "settingFollowRedirects": "global",
+            "_type": "request"
+        },
+        {
+            "_id": "req_7b5ec5890ad740be9635375ded999aad",
+            "parentId": "fld_3d3ca1772de54aa6b505d0c48f543090",
+            "modified": 1674598694687,
+            "created": 1674073295176,
+            "url": "{{ base_url  }}/{{ resource  }}/clinic",
+            "name": "Create-Clinic",
+            "description": "",
+            "method": "POST",
+            "body": {
+                "mimeType": "application/json",
+                "text": "{\n\t\"name\": \"Humberto\",\n\t\"email\": \"humberto.araripe14@gmail.com\",\n\t\"password\": \"123456\",\n\t\"razao\": \"123456\",\n\t\"cnpj\": \"123456\",\n\t\"cep\": \"123456\",\n\t\"address\": \"123456\",\n\t\"number\": \"123456\",\n\t\"city\": \"123456\",\n\t\"district\": \"123456\",\n\t\"state\": \"123456\"\n}"
+            },
+            "parameters": [],
+            "headers": [
+                {
+                    "id": "pair_8f7bace5eeb9437ea1858aa9cf12a2a2",
+                    "name": "Content-Type",
+                    "value": "application/json"
+                }
+            ],
+            "authentication": {
+                "token": "{% response 'body', 'req_cf3c05e410f24fc08f196e9a9dd7adb8', 'b64::JC50b2tlbg==::46b', 'no-history' %}",
+                "type": "bearer"
+            },
+            "metaSortKey": -1673129018824,
+            "isPrivate": false,
+            "settingStoreCookies": true,
+            "settingSendCookies": true,
+            "settingDisableRenderRequestBody": false,
+            "settingEncodeUrl": true,
+            "settingRebuildPath": true,
+            "settingFollowRedirects": "global",
+            "_type": "request"
+        },
+        {
+            "_id": "req_616f799c34db40a79239467c5887f329",
+            "parentId": "fld_3671d2315c454891b0b9f744634cf7ca",
+            "modified": 1674602630654,
+            "created": 1674073473514,
+            "url": "{{ base_url  }}/{{ resource  }}/doctor",
+            "name": "Update-Doctor",
+            "description": "",
+            "method": "PUT",
+            "body": {
+                "mimeType": "application/json",
+                "text": "{\n\t\"id\": \"f5e6c42e-49d4-4daf-a7c4-e05964c38f76\",\n\t\"cep\": \"1234v56\",\n\t\"cpf\": \"123v456\",\n\t\"address\": \"123sv456\",\n\t\"number\": \"1236\",\n\t\"city\": \"123v456\",\n\t\"district\": \"123456\",\n\t\"state\": \"123456\",\t\n\t\"speciality\": \"123456\",\n\t\"crm\": \"dadaaa\"\n}"
+            },
+            "parameters": [],
+            "headers": [
+                { "name": "Content-Type", "value": "application/json" }
+            ],
+            "authentication": {
+                "type": "bearer",
+                "token": "{% response 'body', 'req_cf3c05e410f24fc08f196e9a9dd7adb8', 'b64::JC50b2tlbg==::46b', 'no-history', 60 %}"
+            },
+            "metaSortKey": -1674073451835,
+            "isPrivate": false,
+            "settingStoreCookies": true,
+            "settingSendCookies": true,
+            "settingDisableRenderRequestBody": false,
+            "settingEncodeUrl": true,
+            "settingRebuildPath": true,
+            "settingFollowRedirects": "global",
+            "_type": "request"
+        },
+        {
+            "_id": "fld_3671d2315c454891b0b9f744634cf7ca",
+            "parentId": "fld_53c90c87d04c4a7db64ffa222a940185",
+            "modified": 1674073451885,
+            "created": 1674073451885,
+            "name": "Updates",
+            "description": "",
+            "environment": {},
+            "environmentPropertyOrder": null,
+            "metaSortKey": -1674073451885,
+            "_type": "request_group"
+        },
+        {
+            "_id": "req_1ebf3def15d64c8f9f53ad1986a22030",
+            "parentId": "fld_3671d2315c454891b0b9f744634cf7ca",
+            "modified": 1674602737744,
+            "created": 1674073493175,
+            "url": "{{ base_url  }}/{{ resource  }}/clinic",
+            "name": "Update-Clinic",
+            "description": "",
+            "method": "PUT",
+            "body": {
+                "mimeType": "application/json",
+                "text": "{\n\t\"id\": \"d06d5749-f644-49cd-9936-da5c74906fb9\",\n\t\"razao\": \"12s3456\",\n\t\"cnpj\": \"1234s56\",\n\t\"cep\": \"1234d56\",\n\t\"address\": \"12456\",\n\t\"number\": \"1345s6\",\n\t\"city\": \"123456\",\n\t\"district\": \"123456\",\n\t\"state\": \"123456\"\n}"
+            },
+            "parameters": [],
+            "headers": [
+                { "name": "Content-Type", "value": "application/json" }
+            ],
+            "authentication": {
+                "type": "bearer",
+                "token": "{% response 'body', 'req_cf3c05e410f24fc08f196e9a9dd7adb8', 'b64::JC50b2tlbg==::46b', 'no-history', 60 %}"
+            },
+            "metaSortKey": -1674073451810,
+            "isPrivate": false,
+            "settingStoreCookies": true,
+            "settingSendCookies": true,
+            "settingDisableRenderRequestBody": false,
+            "settingEncodeUrl": true,
+            "settingRebuildPath": true,
+            "settingFollowRedirects": "global",
+            "_type": "request"
+        },
+        {
+            "_id": "req_79a938e8c35940c0abd9549d67b7e303",
+            "parentId": "fld_3671d2315c454891b0b9f744634cf7ca",
+            "modified": 1674607535563,
+            "created": 1674073482341,
+            "url": "{{ base_url  }}/{{ resource  }}/pacient",
+            "name": "Update-Pacient",
+            "description": "",
+            "method": "PUT",
+            "body": {
+                "mimeType": "application/json",
+                "text": "{\n\t\t\"id\": \"09f5dfb6-e17f-48dd-b299-d9ae8334b6f1\",\n    \"cep\": \"12345\",\n   \t\"rg\": \"123456789\",\n    \"cpf\": \"12345678s910\",\n    \"address\": \"Rua das Flores\",\n    \"number\": \"12s3\",\n    \"city\": \"São Paulo\",\n    \"district\": \"Jardins\",\n    \"state\": \"SP\"\n}"
+            },
+            "parameters": [],
+            "headers": [
+                { "name": "Content-Type", "value": "application/json" }
+            ],
+            "authentication": {
+                "type": "bearer",
+                "token": "{% response 'body', 'req_cf3c05e410f24fc08f196e9a9dd7adb8', 'b64::JC50b2tlbg==::46b', 'no-history' %}"
+            },
+            "metaSortKey": -1674073451785,
+            "isPrivate": false,
+            "settingStoreCookies": true,
+            "settingSendCookies": true,
+            "settingDisableRenderRequestBody": false,
+            "settingEncodeUrl": true,
+            "settingRebuildPath": true,
+            "settingFollowRedirects": "global",
+            "_type": "request"
+        },
+        {
+            "_id": "req_7869a1b5ee11473aa67d929047609908",
+            "parentId": "fld_2dac964122be45a2bca09d882aae6462",
+            "modified": 1675208627810,
+            "created": 1675207671481,
+            "url": "{{ base_url  }}/{{ resource  }}/avatar-url",
+            "name": "Update-Url-Avatar",
+            "description": "",
+            "method": "PUT",
+            "body": {
+                "mimeType": "application/json",
+                "text": "{\n\t\t\"avatar_filename\": \"https://imashop.vteximg.com.br/arquivos/ids/166272-1000-1000/ima-ferradura-alnico-100x63-mm-azul-vermelho-imashop-01.jpg?v=636704663321000000\"\n}"
+            },
+            "parameters": [],
+            "headers": [
+                { "name": "Content-Type", "value": "application/json" }
+            ],
+            "authentication": {
+                "type": "bearer",
+                "token": "{% response 'body', 'req_cf3c05e410f24fc08f196e9a9dd7adb8', 'b64::JC50b2tlbg==::46b', 'no-history' %}"
+            },
+            "metaSortKey": -1675207671481,
+            "isPrivate": false,
+            "settingStoreCookies": true,
+            "settingSendCookies": true,
+            "settingDisableRenderRequestBody": false,
+            "settingEncodeUrl": true,
+            "settingRebuildPath": true,
+            "settingFollowRedirects": "global",
+            "_type": "request"
+        },
+        {
+            "_id": "fld_2dac964122be45a2bca09d882aae6462",
+            "parentId": "fld_5bcfd969749c46969f0c97a86ea74349",
+            "modified": 1673130388438,
+            "created": 1673130388438,
+            "name": "Update",
+            "description": "",
+            "environment": {},
+            "environmentPropertyOrder": null,
+            "metaSortKey": -1673130388438,
+            "_type": "request_group"
+        },
+        {
+            "_id": "fld_5bcfd969749c46969f0c97a86ea74349",
+            "parentId": "wrk_469e2b2fdab4472db29462e16dee00af",
+            "modified": 1674237243191,
+            "created": 1587333881183,
+            "name": "Users",
+            "description": "",
+            "environment": { "resource": "users" },
+            "environmentPropertyOrder": { "&": ["resource"] },
+            "metaSortKey": -1672962626100,
+            "_type": "request_group"
+        },
+        {
+            "_id": "req_000d6c8786dd4cf2b0d9cc649daa7063",
+            "parentId": "fld_2dac964122be45a2bca09d882aae6462",
+            "modified": 1675208451045,
+            "created": 1589058960217,
+            "url": "{{ base_url  }}/{{ resource  }}",
+            "name": "Update-User",
+            "description": "",
+            "method": "PUT",
+            "body": {
+                "mimeType": "application/json",
+                "text": "{\n\t\"name\": \"Humberto\",\n\t\"email\": \"humberto.araripe12@hotmail.com\",\n\t\"old_password\": \"1125\",\n\t\"password\": \"112509na\"\n}"
+            },
+            "parameters": [],
+            "headers": [
+                {
+                    "id": "pair_13dfd6f8b9a24b9e99cd0aa88a426ae6",
+                    "name": "Content-Type",
+                    "value": "application/json"
+                }
+            ],
+            "authentication": {
+                "token": "{% response 'body', 'req_cf3c05e410f24fc08f196e9a9dd7adb8', 'b64::JC50b2tlbg==::46b', 'no-history' %}",
+                "type": "bearer"
+            },
+            "metaSortKey": -1631273656362,
+            "isPrivate": false,
+            "settingStoreCookies": true,
+            "settingSendCookies": true,
+            "settingDisableRenderRequestBody": false,
+            "settingEncodeUrl": true,
+            "settingRebuildPath": true,
+            "settingFollowRedirects": "global",
+            "_type": "request"
+        },
+        {
+            "_id": "req_83e4d969804e4c2ba9a803af622ebbdb",
+            "parentId": "fld_2dac964122be45a2bca09d882aae6462",
+            "modified": 1675207811043,
+            "created": 1587339641243,
+            "url": "{{ base_url  }}/{{ resource  }}/avatar",
+            "name": "Update-Avatar",
+            "description": "",
+            "method": "PATCH",
+            "body": {
+                "mimeType": "multipart/form-data",
+                "params": [
+                    {
+                        "description": "",
+                        "fileName": "C:\\Users\\omadt\\OneDrive\\Imagens\\Images-Downloads\\1186452.jpg",
+                        "id": "pair_5acb2464fac14d248c450db24039a49e",
+                        "name": "avatar_filename",
+                        "type": "file",
+                        "value": " "
+                    }
+                ]
+            },
+            "parameters": [],
+            "headers": [
+                {
+                    "id": "pair_adf6d3c3892a4f4092806c09e4232cd6",
+                    "name": "Content-Type",
+                    "value": "multipart/form-data"
+                }
+            ],
+            "authentication": {
+                "token": "{% response 'body', 'req_cf3c05e410f24fc08f196e9a9dd7adb8', 'b64::JC50b2tlbg==::46b', 'no-history' %}",
+                "type": "bearer",
+                "prefix": ""
+            },
+            "metaSortKey": -1587339641243,
+            "isPrivate": false,
+            "settingStoreCookies": true,
+            "settingSendCookies": true,
+            "settingDisableRenderRequestBody": false,
+            "settingEncodeUrl": true,
+            "settingRebuildPath": true,
+            "settingFollowRedirects": "global",
+            "_type": "request"
+        },
+        {
+            "_id": "req_fa2091d11f904c228ac31562b81c91f1",
+            "parentId": "fld_65172b555ac7462691efff1526fbe1f2",
+            "modified": 1675127924118,
+            "created": 1588982025684,
+            "url": "{{ base_url  }}/{{ resource  }}/forgot",
+            "name": "Forgot",
+            "description": "",
+            "method": "POST",
+            "body": {
+                "mimeType": "application/json",
+                "text": "{\n\t\"email\": \"humberto.araripe12@gmail.com\"\n}"
+            },
+            "parameters": [],
+            "headers": [
+                {
+                    "id": "pair_13dfd6f8b9a24b9e99cd0aa88a426ae6",
+                    "name": "Content-Type",
+                    "value": "application/json"
+                }
+            ],
+            "authentication": {},
+            "metaSortKey": -1588982025684,
+            "isPrivate": false,
+            "settingStoreCookies": true,
+            "settingSendCookies": true,
+            "settingDisableRenderRequestBody": false,
+            "settingEncodeUrl": true,
+            "settingRebuildPath": true,
+            "settingFollowRedirects": "global",
+            "_type": "request"
+        },
+        {
+            "_id": "fld_65172b555ac7462691efff1526fbe1f2",
+            "parentId": "fld_5bcfd969749c46969f0c97a86ea74349",
+            "modified": 1590110691113,
+            "created": 1588981956530,
+            "name": "Password",
+            "description": "",
+            "environment": { "resource": "password" },
+            "environmentPropertyOrder": { "&": ["resource"] },
+            "metaSortKey": -1587333888590,
+            "_type": "request_group"
+        },
+        {
+            "_id": "req_e65e8c008e824149bbcd4cfd7ca5d536",
+            "parentId": "fld_65172b555ac7462691efff1526fbe1f2",
+            "modified": 1589329040379,
+            "created": 1588983086048,
+            "url": "{{ base_url  }}/{{ resource  }}/reset",
+            "name": "Reset",
+            "description": "",
+            "method": "POST",
+            "body": {
+                "mimeType": "application/json",
+                "text": "{\n\t\"password\": \"1125\",\n\t\"password_confirmation\": \"11\",\n\t\"token\": \"7b328e21-0da1-4743-a898-3d076504793f\"\n}"
+            },
+            "parameters": [],
+            "headers": [
+                {
+                    "id": "pair_13dfd6f8b9a24b9e99cd0aa88a426ae6",
+                    "name": "Content-Type",
+                    "value": "application/json"
+                }
+            ],
+            "authentication": {},
+            "metaSortKey": -1588203913218,
+            "isPrivate": false,
+            "settingStoreCookies": true,
+            "settingSendCookies": true,
+            "settingDisableRenderRequestBody": false,
+            "settingEncodeUrl": true,
+            "settingRebuildPath": true,
+            "settingFollowRedirects": "global",
+            "_type": "request"
+        },
+        {
+            "_id": "req_cf3c05e410f24fc08f196e9a9dd7adb8",
+            "parentId": "fld_2e05295061e1423eae312553bf09ca92",
+            "modified": 1675443274747,
+            "created": 1587336704660,
+            "url": "{{ base_url  }}/{{ resource  }}",
+            "name": "Login",
+            "description": "",
+            "method": "POST",
+            "body": {
+                "mimeType": "application/json",
+                "text": "{\n\t\"email\": \"humberto.araripe10@gmail.com\",\n\t\"password\": \"123456\"\n}"
+            },
+            "parameters": [],
+            "headers": [
+                {
+                    "id": "pair_90d7fd4e40d04797a7fb9439f622513b",
+                    "name": "Content-Type",
+                    "value": "application/json"
+                },
+                {
+                    "description": "",
+                    "id": "pair_d686231a335246e5a4bc4e4b6012cb03",
+                    "name": "",
+                    "value": ""
+                }
+            ],
+            "authentication": {
+                "disabled": true,
+                "token": "",
+                "type": "bearer"
+            },
+            "metaSortKey": -1587336704660,
+            "isPrivate": false,
+            "settingStoreCookies": true,
+            "settingSendCookies": true,
+            "settingDisableRenderRequestBody": false,
+            "settingEncodeUrl": true,
+            "settingRebuildPath": true,
+            "settingFollowRedirects": "global",
+            "_type": "request"
+        },
+        {
+            "_id": "fld_2e05295061e1423eae312553bf09ca92",
+            "parentId": "fld_5bcfd969749c46969f0c97a86ea74349",
+            "modified": 1673720661165,
+            "created": 1587336697923,
+            "name": "Auth",
+            "description": "",
+            "environment": { "resource": "sessions" },
+            "environmentPropertyOrder": { "&": ["resource"] },
+            "metaSortKey": -1587333888565,
+            "_type": "request_group"
+        },
+        {
+            "_id": "req_f22fe25b63274d3188a227fa5aa3c89b",
+            "parentId": "fld_9e4693e29b6e44478e25d488372d1c08",
+            "modified": 1673130545358,
+            "created": 1673130435414,
+            "url": "{{ base_url  }}/{{ resource  }}",
+            "name": "MyProfile",
+            "description": "",
+            "method": "GET",
+            "body": {},
+            "parameters": [],
+            "headers": [],
+            "authentication": {
+                "type": "bearer",
+                "token": "{% response 'body', 'req_cf3c05e410f24fc08f196e9a9dd7adb8', 'b64::JC50b2tlbg==::46b', 'no-history' %}"
+            },
+            "metaSortKey": -1673130435414,
+            "isPrivate": false,
+            "settingStoreCookies": true,
+            "settingSendCookies": true,
+            "settingDisableRenderRequestBody": false,
+            "settingEncodeUrl": true,
+            "settingRebuildPath": true,
+            "settingFollowRedirects": "global",
+            "_type": "request"
+        },
+        {
+            "_id": "fld_9e4693e29b6e44478e25d488372d1c08",
+            "parentId": "fld_5bcfd969749c46969f0c97a86ea74349",
+            "modified": 1590110865509,
+            "created": 1589058730577,
+            "name": "Profile",
+            "description": "",
+            "environment": { "resource": "profile" },
+            "environmentPropertyOrder": { "&": ["resource"] },
+            "metaSortKey": -1587333888540,
+            "_type": "request_group"
+        },
+        {
+            "_id": "req_187db6de49a94ee885c535c574254b0d",
+            "parentId": "fld_9e4693e29b6e44478e25d488372d1c08",
+            "modified": 1674255369409,
+            "created": 1674254614186,
+            "url": "{{ base_url  }}/{{ resource  }}/clinic",
+            "name": "MyProfileCLINIC",
+            "description": "",
+            "method": "GET",
+            "body": {},
+            "parameters": [],
+            "headers": [],
+            "authentication": {
+                "type": "bearer",
+                "token": "{% response 'body', 'req_cf3c05e410f24fc08f196e9a9dd7adb8', 'b64::JC50b2tlbg==::46b', 'no-history' %}"
+            },
+            "metaSortKey": -1673130435409.3125,
+            "isPrivate": false,
+            "settingStoreCookies": true,
+            "settingSendCookies": true,
+            "settingDisableRenderRequestBody": false,
+            "settingEncodeUrl": true,
+            "settingRebuildPath": true,
+            "settingFollowRedirects": "global",
+            "_type": "request"
+        },
+        {
+            "_id": "req_3023e7af98cc491eba4ab3af6af40c47",
+            "parentId": "fld_9e4693e29b6e44478e25d488372d1c08",
+            "modified": 1674255375939,
+            "created": 1674254607646,
+            "url": "{{ base_url  }}/{{ resource  }}/pacient",
+            "name": "MyProfilePACIENT",
+            "description": "",
+            "method": "GET",
+            "body": {},
+            "parameters": [],
+            "headers": [],
+            "authentication": {
+                "type": "bearer",
+                "token": "{% response 'body', 'req_cf3c05e410f24fc08f196e9a9dd7adb8', 'b64::JC50b2tlbg==::46b', 'no-history' %}"
+            },
+            "metaSortKey": -1673130435404.625,
+            "isPrivate": false,
+            "settingStoreCookies": true,
+            "settingSendCookies": true,
+            "settingDisableRenderRequestBody": false,
+            "settingEncodeUrl": true,
+            "settingRebuildPath": true,
+            "settingFollowRedirects": "global",
+            "_type": "request"
+        },
+        {
+            "_id": "req_0c6dd47528494e5c8cfea208dc9f6c01",
+            "parentId": "fld_9e4693e29b6e44478e25d488372d1c08",
+            "modified": 1674255393166,
+            "created": 1674254599443,
+            "url": "{{ base_url  }}/{{ resource  }}/doctor",
+            "name": "MyProfileDOCTOR",
+            "description": "",
+            "method": "GET",
+            "body": {},
+            "parameters": [],
+            "headers": [],
+            "authentication": {
+                "type": "bearer",
+                "token": "{% response 'body', 'req_cf3c05e410f24fc08f196e9a9dd7adb8', 'b64::JC50b2tlbg==::46b', 'no-history' %}"
+            },
+            "metaSortKey": -1673130435395.25,
+            "isPrivate": false,
+            "settingStoreCookies": true,
+            "settingSendCookies": true,
+            "settingDisableRenderRequestBody": false,
+            "settingEncodeUrl": true,
+            "settingRebuildPath": true,
+            "settingFollowRedirects": "global",
+            "_type": "request"
+        },
+        {
+            "_id": "req_bac690e92bae48b5b18720105c6a22b2",
+            "parentId": "fld_0295c97206fc41ddb7316435cd004adc",
+            "modified": 1674487081351,
+            "created": 1674235049007,
+            "url": "{{ base_url  }}/{{ resource  }}/findPacient",
+            "name": "FindByIdPacient",
+            "description": "",
+            "method": "POST",
+            "body": {
+                "mimeType": "application/json",
+                "text": "{\n\t\"id\": \"08651fa6-cfc4-4b59-9749-1fc467be63d5\"\n}"
+            },
+            "parameters": [],
+            "headers": [
+                { "name": "Content-Type", "value": "application/json" }
+            ],
+            "authentication": {
+                "type": "bearer",
+                "token": "{% response 'body', 'req_cf3c05e410f24fc08f196e9a9dd7adb8', 'b64::JC50b2tlbg==::46b', 'no-history' %}"
+            },
+            "metaSortKey": -1673130435376.5,
+            "isPrivate": false,
+            "settingStoreCookies": true,
+            "settingSendCookies": true,
+            "settingDisableRenderRequestBody": false,
+            "settingEncodeUrl": true,
+            "settingRebuildPath": true,
+            "settingFollowRedirects": "global",
+            "_type": "request"
+        },
+        {
+            "_id": "fld_0295c97206fc41ddb7316435cd004adc",
+            "parentId": "fld_9e4693e29b6e44478e25d488372d1c08",
+            "modified": 1674237293585,
+            "created": 1674234988081,
+            "name": "Find",
+            "description": "",
+            "environment": { "resource": "profile" },
+            "environmentPropertyOrder": { "&": ["resource"] },
+            "metaSortKey": -1673130435389,
+            "_type": "request_group"
+        },
+        {
+            "_id": "req_81b2bdb12fde4b949548608f7a82b5a5",
+            "parentId": "fld_0295c97206fc41ddb7316435cd004adc",
+            "modified": 1674509353779,
+            "created": 1674486933676,
+            "url": "{{ base_url  }}/{{ resource  }}/findClinic",
+            "name": "FindByIdClinic",
+            "description": "",
+            "method": "POST",
+            "body": {
+                "mimeType": "application/json",
+                "text": "{\n\t\"id\": \"ab80a4c6-30a2-4e24-b1bb-512fb87309eb\"\n}"
+            },
+            "parameters": [],
+            "headers": [
+                { "name": "Content-Type", "value": "application/json" }
+            ],
+            "authentication": {
+                "type": "bearer",
+                "token": "{% response 'body', 'req_cf3c05e410f24fc08f196e9a9dd7adb8', 'b64::JC50b2tlbg==::46b', 'no-history' %}"
+            },
+            "metaSortKey": -1673129727162.75,
+            "isPrivate": false,
+            "settingStoreCookies": true,
+            "settingSendCookies": true,
+            "settingDisableRenderRequestBody": false,
+            "settingEncodeUrl": true,
+            "settingRebuildPath": true,
+            "settingFollowRedirects": "global",
+            "_type": "request"
+        },
+        {
+            "_id": "req_acc201c8859e4e539c08774a6d37e243",
+            "parentId": "fld_0295c97206fc41ddb7316435cd004adc",
+            "modified": 1674486964075,
+            "created": 1674486941798,
+            "url": "{{ base_url  }}/{{ resource  }}/findDoctor",
+            "name": "FindByIdDoctor",
+            "description": "",
+            "method": "POST",
+            "body": {
+                "mimeType": "application/json",
+                "text": "{\n\t\"id\": \"2d5aab52-b4e8-4527-a88f-11c0bbd69347\"\n}"
+            },
+            "parameters": [],
+            "headers": [
+                { "name": "Content-Type", "value": "application/json" }
+            ],
+            "authentication": {
+                "type": "bearer",
+                "token": "{% response 'body', 'req_cf3c05e410f24fc08f196e9a9dd7adb8', 'b64::JC50b2tlbg==::46b', 'no-history' %}"
+            },
+            "metaSortKey": -1673129373055.875,
+            "isPrivate": false,
+            "settingStoreCookies": true,
+            "settingSendCookies": true,
+            "settingDisableRenderRequestBody": false,
+            "settingEncodeUrl": true,
+            "settingRebuildPath": true,
+            "settingFollowRedirects": "global",
+            "_type": "request"
+        },
+        {
+            "_id": "req_16c58453135b4832b8dafd3e12f35c48",
+            "parentId": "fld_3295b768394c4f6093ae7c3a842ada25",
+            "modified": 1590111665046,
+            "created": 1589063609321,
+            "url": "{{ base_url  }}/{{ resource  }}",
+            "name": "Index",
+            "description": "",
+            "method": "GET",
+            "body": {},
+            "parameters": [],
+            "headers": [],
+            "authentication": {
+                "token": "{% response 'body', 'req_cf3c05e410f24fc08f196e9a9dd7adb8', 'b64::JC50b2tlbg==::46b', 'no-history' %}",
+                "type": "bearer"
+            },
+            "metaSortKey": -1589010764086.125,
+            "isPrivate": false,
+            "settingStoreCookies": true,
+            "settingSendCookies": true,
+            "settingDisableRenderRequestBody": false,
+            "settingEncodeUrl": true,
+            "settingRebuildPath": true,
+            "settingFollowRedirects": "global",
+            "_type": "request"
+        },
+        {
+            "_id": "fld_3295b768394c4f6093ae7c3a842ada25",
+            "parentId": "fld_5bcfd969749c46969f0c97a86ea74349",
+            "modified": 1590110885287,
+            "created": 1589063603081,
+            "name": "Providers",
+            "description": "",
+            "environment": { "resource": "providers" },
+            "environmentPropertyOrder": { "&": ["resource"] },
+            "metaSortKey": -1587333888490,
+            "_type": "request_group"
+        },
+        {
+            "_id": "req_86235c5d770644b3aff374643aee3d96",
+            "parentId": "fld_f1b33fccb8ac41798863824b5cbf7868",
+            "modified": 1675276887246,
+            "created": 1589073306740,
+            "url": "{{ base_url  }}/{{ resource  }}/d0ec824ce8b2f652668f3022f7aa7dc7/month-availability",
+            "name": "Month",
+            "description": "",
+            "method": "GET",
+            "body": {},
+            "parameters": [
+                {
+                    "description": "",
+                    "id": "pair_2744366e6cdf4aebad53520dadb8586a",
+                    "name": "month",
+                    "value": "4"
+                },
+                {
+                    "description": "",
+                    "id": "pair_bf0898d648d04b809f6c3e6d05278cd5",
+                    "name": "year",
+                    "value": "2023"
+                }
+            ],
+            "headers": [],
+            "authentication": {
+                "token": "{% response 'body', 'req_cf3c05e410f24fc08f196e9a9dd7adb8', 'b64::JC50b2tlbg==::46b', 'no-history' %}",
+                "type": "bearer"
+            },
+            "metaSortKey": -1589005974352.4375,
+            "isPrivate": false,
+            "settingStoreCookies": true,
+            "settingSendCookies": true,
+            "settingDisableRenderRequestBody": false,
+            "settingEncodeUrl": true,
+            "settingRebuildPath": true,
+            "settingFollowRedirects": "global",
+            "_type": "request"
+        },
+        {
+            "_id": "fld_f1b33fccb8ac41798863824b5cbf7868",
+            "parentId": "fld_3295b768394c4f6093ae7c3a842ada25",
+            "modified": 1589073303181,
+            "created": 1589073286316,
+            "name": "Availability",
+            "description": "",
+            "environment": {},
+            "environmentPropertyOrder": null,
+            "metaSortKey": -1589010764036.125,
+            "_type": "request_group"
+        },
+        {
+            "_id": "req_885ae187c55f47debfa2dac32c7cf13c",
+            "parentId": "fld_f1b33fccb8ac41798863824b5cbf7868",
+            "modified": 1675276885148,
+            "created": 1589073526908,
+            "url": "{{ base_url  }}/{{ resource  }}/8718fe61-8299-4a2c-93c0-f804f6e87651/day-availability",
+            "name": "Day",
+            "description": "",
+            "method": "GET",
+            "body": {},
+            "parameters": [
+                {
+                    "id": "pair_e94d0d1b956642aab7af0fb69ce5b710",
+                    "name": "day",
+                    "value": "01",
+                    "description": "",
+                    "disabled": false
+                },
+                {
+                    "id": "pair_950a974e4ace4959bd87cdd6d9ad5d75",
+                    "name": "month",
+                    "value": "02",
+                    "description": ""
+                },
+                {
+                    "id": "pair_6fa57d61377d4a72a38682f2745a1ca9",
+                    "name": "year",
+                    "value": "2023",
+                    "description": ""
+                }
+            ],
+            "headers": [],
+            "authentication": {
+                "token": "{% response 'body', 'req_cf3c05e410f24fc08f196e9a9dd7adb8', 'b64::JC50b2tlbg==::46b', 'no-history' %}",
+                "type": "bearer"
+            },
+            "metaSortKey": -1589003579485.5938,
+            "isPrivate": false,
+            "settingStoreCookies": true,
+            "settingSendCookies": true,
+            "settingDisableRenderRequestBody": false,
+            "settingEncodeUrl": true,
+            "settingRebuildPath": true,
+            "settingFollowRedirects": "global",
+            "_type": "request"
+        },
+        {
+            "_id": "req_0e7e8794e86e48bfbf4931ce9613052b",
+            "parentId": "fld_d8b8e603f7184502938659decea72b46",
+            "modified": 1675435430945,
+            "created": 1675295399608,
+            "url": "{{ base_url  }}/{{ resource  }}/forPatient",
+            "name": "forPatient",
+            "description": "",
+            "method": "GET",
+            "body": {
+                "mimeType": "application/json",
+                "text": "{\n\t\"user_id\": \"95ab00e8-88aa-4fe0-a04e-729808bfc7e3\"\n}"
+            },
+            "parameters": [],
+            "headers": [
+                { "name": "Content-Type", "value": "application/json" }
+            ],
+            "authentication": {
+                "disabled": false,
+                "token": "{% response 'body', 'req_cf3c05e410f24fc08f196e9a9dd7adb8', 'b64::JC50b2tlbg==::46b', 'no-history' %}",
+                "type": "bearer"
+            },
+            "metaSortKey": -1586667422382.5,
+            "isPrivate": false,
+            "settingStoreCookies": true,
+            "settingSendCookies": true,
+            "settingDisableRenderRequestBody": false,
+            "settingEncodeUrl": true,
+            "settingRebuildPath": true,
+            "settingFollowRedirects": "global",
+            "_type": "request"
+        },
+        {
+            "_id": "fld_d8b8e603f7184502938659decea72b46",
+            "parentId": "fld_9295d7375db34d588b4631ea8a5fecc8",
+            "modified": 1675293816841,
+            "created": 1675293816841,
+            "name": "Finds",
+            "description": "",
+            "environment": {},
+            "environmentPropertyOrder": null,
+            "metaSortKey": -1675293816841,
+            "_type": "request_group"
+        },
+        {
+            "_id": "fld_9295d7375db34d588b4631ea8a5fecc8",
+            "parentId": "wrk_469e2b2fdab4472db29462e16dee00af",
+            "modified": 1673131947736,
+            "created": 1586901711964,
+            "name": "Appointments",
+            "description": "",
+            "environment": { "resource": "appointments" },
+            "environmentPropertyOrder": { "&": ["resource"] },
+            "metaSortKey": -1672962626075,
+            "_type": "request_group"
+        },
+        {
+            "_id": "req_61ced2e25ef540dab44d6c223959c069",
+            "parentId": "fld_d8b8e603f7184502938659decea72b46",
+            "modified": 1675435409712,
+            "created": 1675295409251,
+            "url": "{{ base_url  }}/{{ resource  }}/forDoctor",
+            "name": "forDoctor",
+            "description": "",
+            "method": "GET",
+            "body": {
+                "mimeType": "application/json",
+                "text": "{\n\t\"provider_id\": \"6823fe9d-4eaf-4c62-894a-e6a434a3dc19\"\n}"
+            },
+            "parameters": [],
+            "headers": [
+                { "name": "Content-Type", "value": "application/json" }
+            ],
+            "authentication": {
+                "disabled": false,
+                "token": "{% response 'body', 'req_cf3c05e410f24fc08f196e9a9dd7adb8', 'b64::JC50b2tlbg==::46b', 'no-history' %}",
+                "type": "bearer"
+            },
+            "metaSortKey": -1586667422370,
+            "isPrivate": false,
+            "settingStoreCookies": true,
+            "settingSendCookies": true,
+            "settingDisableRenderRequestBody": false,
+            "settingEncodeUrl": true,
+            "settingRebuildPath": true,
+            "settingFollowRedirects": "global",
+            "_type": "request"
+        },
+        {
+            "_id": "req_e5284e669479480ca87721d4b0328ff5",
+            "parentId": "fld_9295d7375db34d588b4631ea8a5fecc8",
+            "modified": 1675127423294,
+            "created": 1675004519429,
+            "url": "{{ base_url  }}/{{ resource  }}/delete",
+            "name": "DeleteAppointments",
+            "description": "",
+            "method": "DELETE",
+            "body": {
+                "mimeType": "application/json",
+                "text": "{\n\t\"appointment_id\": \"9635bfe8-c224-4d96-bea3-3be4681a1dc4\"\n}"
+            },
+            "parameters": [],
+            "headers": [
+                { "name": "Content-Type", "value": "application/json" }
+            ],
+            "authentication": {
+                "type": "bearer",
+                "token": "{% response 'body', 'req_cf3c05e410f24fc08f196e9a9dd7adb8', 'b64::JC50b2tlbg==::46b', 'no-history' %}"
+            },
+            "metaSortKey": -1675004519429,
+            "isPrivate": false,
+            "settingStoreCookies": true,
+            "settingSendCookies": true,
+            "settingDisableRenderRequestBody": false,
+            "settingEncodeUrl": true,
+            "settingRebuildPath": true,
+            "settingFollowRedirects": "global",
+            "_type": "request"
+        },
+        {
+            "_id": "req_a14e484fb41f49999052bb8cb68b1f71",
+            "parentId": "fld_9295d7375db34d588b4631ea8a5fecc8",
+            "modified": 1675433190229,
+            "created": 1586901740815,
+            "url": "{{ base_url  }}/{{ resource  }}",
+            "name": "Create",
+            "description": "",
+            "method": "POST",
+            "body": {
+                "mimeType": "application/json",
+                "text": "{\n\t\"provider_id\": \"494d8258-2d70-4d03-9dcf-11e75ab83bc3\",\n\t\"date\": \"2023-02-04 18:00:00\",\n\t\"idRoom\": \"svbJVb\"\n}"
+            },
+            "parameters": [],
+            "headers": [
+                {
+                    "id": "pair_c7aa062b7c9c4029b2fc508f0e29367a",
+                    "name": "Content-Type",
+                    "value": "application/json"
+                }
+            ],
+            "authentication": {
+                "token": "{% response 'body', 'req_cf3c05e410f24fc08f196e9a9dd7adb8', 'b64::JC50b2tlbg==::46b', 'no-history' %}",
+                "type": "bearer"
+            },
+            "metaSortKey": -1586901740815,
+            "isPrivate": false,
+            "settingStoreCookies": true,
+            "settingSendCookies": true,
+            "settingDisableRenderRequestBody": false,
+            "settingEncodeUrl": true,
+            "settingRebuildPath": true,
+            "settingFollowRedirects": "global",
+            "_type": "request"
+        },
+        {
+            "_id": "req_944ea1bed12f4ee19c85585d99d82932",
+            "parentId": "fld_9295d7375db34d588b4631ea8a5fecc8",
+            "modified": 1675276879921,
+            "created": 1586908244354,
+            "url": "{{ base_url  }}/{{ resource  }}/me",
+            "name": "List",
+            "description": "",
+            "method": "GET",
+            "body": {},
+            "parameters": [
+                {
+                    "id": "pair_cd089932edb74822a8224862534d2e32",
+                    "name": "year",
+                    "value": "2023",
+                    "description": ""
+                },
+                {
+                    "id": "pair_4c62e54143a8489683ea8ce132c54020",
+                    "name": "month",
+                    "value": "02",
+                    "description": ""
+                },
+                {
+                    "id": "pair_ba5f9052c0e04e21b19a2ed2d31f0a56",
+                    "name": "day",
+                    "value": "01",
+                    "description": ""
+                }
+            ],
+            "headers": [],
+            "authentication": {
+                "disabled": false,
+                "token": "{% response 'body', 'req_cf3c05e410f24fc08f196e9a9dd7adb8', 'b64::JC50b2tlbg==::46b', 'no-history' %}",
+                "type": "bearer"
+            },
+            "metaSortKey": -1586667422407.5,
+            "isPrivate": false,
+            "settingStoreCookies": true,
+            "settingSendCookies": true,
+            "settingDisableRenderRequestBody": false,
+            "settingEncodeUrl": true,
+            "settingRebuildPath": true,
+            "settingFollowRedirects": "global",
+            "_type": "request"
+        },
+        {
+            "_id": "req_2241af8805cd4dd3a6ea6eb4dbc6488f",
+            "parentId": "fld_9295d7375db34d588b4631ea8a5fecc8",
+            "modified": 1675443635808,
+            "created": 1675290093715,
+            "url": "{{ base_url  }}/{{ resource  }}/patient",
+            "name": "ListAppointmentsInDayForPatient(OnlyClinic)",
+            "description": "",
+            "method": "GET",
+            "body": {
+                "mimeType": "application/json",
+                "text": "{\n\t\"user_id\": \"95ab00e8-88aa-4fe0-a04e-729808bfc7e3\"\n} "
+            },
+            "parameters": [
+                {
+                    "id": "pair_cd089932edb74822a8224862534d2e32",
+                    "name": "year",
+                    "value": "2023",
+                    "description": ""
+                },
+                {
+                    "id": "pair_4c62e54143a8489683ea8ce132c54020",
+                    "name": "month",
+                    "value": "02",
+                    "description": ""
+                },
+                {
+                    "id": "pair_ba5f9052c0e04e21b19a2ed2d31f0a56",
+                    "name": "day",
+                    "value": "04",
+                    "description": ""
+                }
+            ],
+            "headers": [
+                { "name": "Content-Type", "value": "application/json" }
+            ],
+            "authentication": {
+                "disabled": false,
+                "token": "{% response 'body', 'req_cf3c05e410f24fc08f196e9a9dd7adb8', 'b64::JC50b2tlbg==::46b', 'no-history' %}",
+                "type": "bearer"
+            },
+            "metaSortKey": -1586667422357.5,
+            "isPrivate": false,
+            "settingStoreCookies": true,
+            "settingSendCookies": true,
+            "settingDisableRenderRequestBody": false,
+            "settingEncodeUrl": true,
+            "settingRebuildPath": true,
+            "settingFollowRedirects": "global",
+            "_type": "request"
+        },
+        {
+            "_id": "req_573a0ed432784d36ac6a7544bb3b676a",
+            "parentId": "fld_9295d7375db34d588b4631ea8a5fecc8",
+            "modified": 1675434493104,
+            "created": 1675434493104,
+            "url": "{{ base_url  }}/{{ resource  }}/doctor",
+            "name": "ListAppointmentsInDayForDoctor(OnlyClinic)",
+            "description": "",
+            "method": "GET",
+            "body": {
+                "mimeType": "application/json",
+                "text": "{\n\t\"provider_id\": \"6e9c3192-306f-4e8d-9dd7-6b060bef224d\"\n}"
+            },
+            "parameters": [
+                {
+                    "id": "pair_cd089932edb74822a8224862534d2e32",
+                    "name": "year",
+                    "value": "2023",
+                    "description": ""
+                },
+                {
+                    "id": "pair_4c62e54143a8489683ea8ce132c54020",
+                    "name": "month",
+                    "value": "02",
+                    "description": ""
+                },
+                {
+                    "id": "pair_ba5f9052c0e04e21b19a2ed2d31f0a56",
+                    "name": "day",
+                    "value": "04",
+                    "description": ""
+                }
+            ],
+            "headers": [
+                { "name": "Content-Type", "value": "application/json" }
+            ],
+            "authentication": {
+                "disabled": false,
+                "token": "{% response 'body', 'req_cf3c05e410f24fc08f196e9a9dd7adb8', 'b64::JC50b2tlbg==::46b', 'no-history' %}",
+                "type": "bearer"
+            },
+            "metaSortKey": -1586667422307.5,
+            "isPrivate": false,
+            "settingStoreCookies": true,
+            "settingSendCookies": true,
+            "settingDisableRenderRequestBody": false,
+            "settingEncodeUrl": true,
+            "settingRebuildPath": true,
+            "settingFollowRedirects": "global",
+            "_type": "request"
+        },
+        {
+            "_id": "req_25522e5d9a744363bef2a37a399eb51a",
+            "parentId": "fld_289fc75d2426404c9c34ed0492c8c74b",
+            "modified": 1674238785407,
+            "created": 1674237398787,
+            "url": "{{ base_url  }}/{{ resource  }}/all",
+            "name": "findPacientsAndDoctor",
+            "description": "",
+            "method": "GET",
+            "body": {},
+            "parameters": [],
+            "headers": [],
+            "authentication": {
+                "type": "bearer",
+                "token": "{% response 'body', 'req_cf3c05e410f24fc08f196e9a9dd7adb8', 'b64::JC50b2tlbg==::46b', 'no-history' %}"
+            },
+            "metaSortKey": -1674237398787,
+            "isPrivate": false,
+            "settingStoreCookies": true,
+            "settingSendCookies": true,
+            "settingDisableRenderRequestBody": false,
+            "settingEncodeUrl": true,
+            "settingRebuildPath": true,
+            "settingFollowRedirects": "global",
+            "_type": "request"
+        },
+        {
+            "_id": "fld_289fc75d2426404c9c34ed0492c8c74b",
+            "parentId": "wrk_469e2b2fdab4472db29462e16dee00af",
+            "modified": 1673722731521,
+            "created": 1672962611598,
+            "name": "Clinics",
+            "description": "",
+            "environment": { "resource": "clinic" },
+            "environmentPropertyOrder": { "&": ["resource"] },
+            "metaSortKey": -1672962626062.5,
+            "_type": "request_group"
+        },
+        {
+            "_id": "req_4cc77b2cd6cd4ffd82140fbdac7847e6",
+            "parentId": "fld_289fc75d2426404c9c34ed0492c8c74b",
+            "modified": 1674143783257,
+            "created": 1673129018949,
+            "url": "{{ base_url  }}/{{ resource  }}",
+            "name": "findAllClinics",
+            "description": "",
+            "method": "GET",
+            "body": {},
+            "parameters": [],
+            "headers": [],
+            "authentication": {
+                "type": "bearer",
+                "token": "{% response 'body', 'req_cf3c05e410f24fc08f196e9a9dd7adb8', 'b64::JC50b2tlbg==::46b', 'no-history' %}"
+            },
+            "metaSortKey": -1673359366534.75,
+            "isPrivate": false,
+            "settingStoreCookies": true,
+            "settingSendCookies": true,
+            "settingDisableRenderRequestBody": false,
+            "settingEncodeUrl": true,
+            "settingRebuildPath": true,
+            "settingFollowRedirects": "global",
+            "_type": "request"
+        },
+        {
+            "_id": "req_ac2349071df04f2cb16767ba1d7845ea",
+            "parentId": "fld_289fc75d2426404c9c34ed0492c8c74b",
+            "modified": 1673723877396,
+            "created": 1672881387373,
+            "url": "{{ base_url  }}/{{ resource  }}",
+            "name": "Create-Clinic",
+            "description": "",
+            "method": "POST",
+            "body": {
+                "mimeType": "application/json",
+                "text": "{\n\t\"name\": \"Humberto\",\n\t\"email\": \"humberto.araripe14@gmail.com\",\n\t\"password\": \"123456\",\n\t\"razao\": \"123456\",\n\t\"cnpj\": \"123456\",\n\t\"cep\": \"123456\",\n\t\"address\": \"123456\",\n\t\"number\": \"123456\",\n\t\"city\": \"123456\",\n\t\"district\": \"123456\",\n\t\"state\": \"123456\"\n}"
+            },
+            "parameters": [],
+            "headers": [
+                {
+                    "id": "pair_8f7bace5eeb9437ea1858aa9cf12a2a2",
+                    "name": "Content-Type",
+                    "value": "application/json"
+                }
+            ],
+            "authentication": { "token": "", "type": "bearer" },
+            "metaSortKey": -1672962618974.5,
+            "isPrivate": false,
+            "settingStoreCookies": true,
+            "settingSendCookies": true,
+            "settingDisableRenderRequestBody": false,
+            "settingEncodeUrl": true,
+            "settingRebuildPath": true,
+            "settingFollowRedirects": "global",
+            "_type": "request"
+        },
+        {
+            "_id": "req_c8b4805be49a4ca39ee2546fcbf77572",
+            "parentId": "fld_289fc75d2426404c9c34ed0492c8c74b",
+            "modified": 1674238820334,
+            "created": 1673756114095,
+            "url": "{{ base_url  }}/{{ resource  }}/doctor",
+            "name": "CreateDoctorForClinic",
+            "description": "",
+            "method": "POST",
+            "body": {
+                "mimeType": "application/json",
+                "text": "{\n\t\"name\": \"Humberto\",\n\t\"email\": \"humberto.dararipef2@gmail.com\",\n\t\"password\": \"123456\",\n\t\"cep\": \"123456\",\n\t\"cpf\": \"123456\",\n\t\"address\": \"123456\",\n\t\"number\": \"123456\",\n\t\"city\": \"123456\",\n\t\"district\": \"123456\",\n\t\"state\": \"123456\",\t\n\t\"speciality\": \"123456\",\n\t\"crm\": \"dad\"\n}"
+            },
+            "parameters": [],
+            "headers": [
+                { "name": "Content-Type", "value": "application/json" }
+            ],
+            "authentication": {
+                "type": "bearer",
+                "token": "{% response 'body', 'req_cf3c05e410f24fc08f196e9a9dd7adb8', 'b64::JC50b2tlbg==::46b', 'no-history', 60 %}"
+            },
+            "metaSortKey": -1672962618962,
+            "isPrivate": false,
+            "settingStoreCookies": true,
+            "settingSendCookies": true,
+            "settingDisableRenderRequestBody": false,
+            "settingEncodeUrl": true,
+            "settingRebuildPath": true,
+            "settingFollowRedirects": "global",
+            "_type": "request"
+        },
+        {
+            "_id": "req_34c58d39efc5408fba626627bcf61a5c",
+            "parentId": "fld_289fc75d2426404c9c34ed0492c8c74b",
+            "modified": 1674253476475,
+            "created": 1674253465928,
+            "url": "{{ base_url  }}/{{ resource  }}/doctor",
+            "name": "CreatePacientForClinic",
+            "description": "",
+            "method": "POST",
+            "body": {
+                "mimeType": "application/json",
+                "text": "{\n    \"name\": \"João Silva\",\n    \"rg\": \"123456789\",\n    \"cpf\": \"12345678910\",\n    \"cep\": \"12345678\",\n    \"address\": \"Rua das Flores\",\n    \"number\": \"123\",\n    \"city\": \"São Paulo\",\n    \"district\": \"Jardins\",\n    \"state\": \"SP\",\n    \"email\": \"joaosilva@email.com\",\n    \"password\": \"senha123\"\n}"
+            },
+            "parameters": [],
+            "headers": [
+                { "name": "Content-Type", "value": "application/json" }
+            ],
+            "authentication": {
+                "type": "bearer",
+                "token": "{% response 'body', 'req_cf3c05e410f24fc08f196e9a9dd7adb8', 'b64::JC50b2tlbg==::46b', 'no-history', 60 %}"
+            },
+            "metaSortKey": -1672962618955.75,
+            "isPrivate": false,
+            "settingStoreCookies": true,
+            "settingSendCookies": true,
+            "settingDisableRenderRequestBody": false,
+            "settingEncodeUrl": true,
+            "settingRebuildPath": true,
+            "settingFollowRedirects": "global",
+            "_type": "request"
+        },
+        {
+            "_id": "req_dbd23c36acd348c2b69c0630fde54751",
+            "parentId": "fld_289fc75d2426404c9c34ed0492c8c74b",
+            "modified": 1673757161804,
+            "created": 1672960970674,
+            "url": "{{ base_url  }}/{{ resource  }}",
+            "name": "Update-Clinic",
+            "description": "",
+            "method": "PUT",
+            "body": {
+                "mimeType": "application/json",
+                "text": "{\n\t\"razao\": \"123456\",\n\t\"cnpj\": \"123456\",\n\t\"cep\": \"123456\",\n\t\"address\": \"12456\",\n\t\"number\": \"13456\",\n\t\"city\": \"123456\",\n\t\"district\": \"123456\",\n\t\"state\": \"123456\"\n}"
+            },
+            "parameters": [],
+            "headers": [
+                { "name": "Content-Type", "value": "application/json" }
+            ],
+            "authentication": {
+                "type": "bearer",
+                "token": "{% response 'body', 'req_cf3c05e410f24fc08f196e9a9dd7adb8', 'b64::JC50b2tlbg==::46b', 'no-history', 60 %}"
+            },
+            "metaSortKey": -1672962618949.5,
+            "isPrivate": false,
+            "settingStoreCookies": true,
+            "settingSendCookies": true,
+            "settingDisableRenderRequestBody": false,
+            "settingEncodeUrl": true,
+            "settingRebuildPath": true,
+            "settingFollowRedirects": "global",
+            "_type": "request"
+        },
+        {
+            "_id": "req_a0d88337a38642fcba4477f125276dd5",
+            "parentId": "fld_eefed7a4476d48fcad6ed1013cd00d1e",
+            "modified": 1674238061361,
+            "created": 1674073380591,
+            "url": "{{ base_url  }}/{{ resource  }}",
+            "name": "FindAllPacients",
+            "description": "",
+            "method": "GET",
+            "body": {},
+            "parameters": [],
+            "headers": [],
+            "authentication": {
+                "type": "bearer",
+                "token": "{% response 'body', 'req_cf3c05e410f24fc08f196e9a9dd7adb8', 'b64::JC50b2tlbg==::46b', 'no-history', 60 %}"
+            },
+            "metaSortKey": -1674073380591,
+            "isPrivate": false,
+            "settingStoreCookies": true,
+            "settingSendCookies": true,
+            "settingDisableRenderRequestBody": false,
+            "settingEncodeUrl": true,
+            "settingRebuildPath": true,
+            "settingFollowRedirects": "global",
+            "_type": "request"
+        },
+        {
+            "_id": "fld_eefed7a4476d48fcad6ed1013cd00d1e",
+            "parentId": "wrk_469e2b2fdab4472db29462e16dee00af",
+            "modified": 1674237953896,
+            "created": 1672962626050,
+            "name": "Pacient",
+            "description": "",
+            "environment": { "resource": "pacient" },
+            "environmentPropertyOrder": { "&": ["resource"] },
+            "metaSortKey": -1672962626050,
+            "_type": "request_group"
+        },
+        {
+            "_id": "req_e2dfcfb767ac40688671e5ecafddf45d",
+            "parentId": "fld_eefed7a4476d48fcad6ed1013cd00d1e",
+            "modified": 1674753982409,
+            "created": 1672881381222,
+            "url": "{{ base_url  }}/{{ resource  }}",
+            "name": "Create-Pacient",
+            "description": "",
+            "method": "POST",
+            "body": {
+                "mimeType": "application/json",
+                "text": "{\n    \"name\": \"João Silva\",\n    \"rg\": \"123456789\",\n    \"cpf\": \"12345678910\",\n    \"cep\": \"12345678\",\n    \"address\": \"Rua das Flores\",\n    \"number\": \"123\",\n    \"city\": \"São Paulo\",\n    \"district\": \"Jardins\",\n    \"state\": \"SP\",\n    \"email\": \"humberto.araripe10@gmail.com\",\n    \"password\": \"123456\"\n}"
+            },
+            "parameters": [],
+            "headers": [
+                {
+                    "id": "pair_8f7bace5eeb9437ea1858aa9cf12a2a2",
+                    "name": "Content-Type",
+                    "value": "application/json"
+                }
+            ],
+            "authentication": { "token": "", "type": "bearer" },
+            "metaSortKey": -1672960843861,
+            "isPrivate": false,
+            "settingStoreCookies": true,
+            "settingSendCookies": true,
+            "settingDisableRenderRequestBody": false,
+            "settingEncodeUrl": true,
+            "settingRebuildPath": true,
+            "settingFollowRedirects": "global",
+            "_type": "request"
+        },
+        {
+            "_id": "req_0d9c0f058d26485ba30c19c20e2710cd",
+            "parentId": "fld_eefed7a4476d48fcad6ed1013cd00d1e",
+            "modified": 1674238058904,
+            "created": 1672960843811,
+            "url": "{{ base_url  }}/{{ resource  }}/pacient",
+            "name": "Update-Pacient",
+            "description": "",
+            "method": "PUT",
+            "body": {
+                "mimeType": "application/json",
+                "text": "{\n    \"rg\": \"123456789\",\n    \"cpf\": \"12345678910\",\n    \"cep\": \"12345678\",\n    \"address\": \"Rua das Flores\",\n    \"number\": \"123\",\n    \"city\": \"São Paulo\",\n    \"district\": \"Jardins\",\n    \"state\": \"SP\"\n}"
+            },
+            "parameters": [],
+            "headers": [
+                { "name": "Content-Type", "value": "application/json" }
+            ],
+            "authentication": {
+                "type": "bearer",
+                "token": "{% response 'body', 'req_cf3c05e410f24fc08f196e9a9dd7adb8', 'b64::JC50b2tlbg==::46b', 'no-history', 60 %}"
+            },
+            "metaSortKey": -1672960843811,
+            "isPrivate": false,
+            "settingStoreCookies": true,
+            "settingSendCookies": true,
+            "settingDisableRenderRequestBody": false,
+            "settingEncodeUrl": true,
+            "settingRebuildPath": true,
+            "settingFollowRedirects": "global",
+            "_type": "request"
+        },
+        {
+            "_id": "req_0fd0c6873d8843fba1f663ef4a83abf3",
+            "parentId": "fld_aa74f7ed9a414823a4afdcdd0d5e8196",
+            "modified": 1674084732619,
+            "created": 1673140114933,
+            "url": "{{ base_url  }}/{{ resource  }}",
+            "name": "FindAllDoctors",
+            "description": "",
+            "method": "GET",
+            "body": {},
+            "parameters": [],
+            "headers": [],
+            "authentication": {
+                "type": "bearer",
+                "token": "{% response 'body', 'req_cf3c05e410f24fc08f196e9a9dd7adb8', 'b64::JC50b2tlbg==::46b', 'no-history' %}"
+            },
+            "metaSortKey": -1673140114933,
+            "isPrivate": false,
+            "settingStoreCookies": true,
+            "settingSendCookies": true,
+            "settingDisableRenderRequestBody": false,
+            "settingEncodeUrl": true,
+            "settingRebuildPath": true,
+            "settingFollowRedirects": "global",
+            "_type": "request"
+        },
+        {
+            "_id": "fld_aa74f7ed9a414823a4afdcdd0d5e8196",
+            "parentId": "wrk_469e2b2fdab4472db29462e16dee00af",
+            "modified": 1674073334438,
+            "created": 1672962589127,
+            "name": "Doctors",
+            "description": "",
+            "environment": { "resource": "doctors" },
+            "environmentPropertyOrder": { "&": ["resource"] },
+            "metaSortKey": -1672962624243.625,
+            "_type": "request_group"
+        },
+        {
+            "_id": "req_bdcbe279881c46888eb97e6f1b0d92fc",
+            "parentId": "fld_aa74f7ed9a414823a4afdcdd0d5e8196",
+            "modified": 1675368840670,
+            "created": 1587333888640,
+            "url": "{{ base_url  }}/{{ resource  }}",
+            "name": "Create-Doctor",
+            "description": "",
+            "method": "POST",
+            "body": {
+                "mimeType": "application/json",
+                "text": "{\n\"name\": \"Humberto Araripe\",\n\"email\": \"humberto.araripe2@gmail.com\",\n\"password\": \"123456\",\n\"address\": \"Rua das Flores, 123\",\n\"number\": \"456\",\n\"city\": \"São Paulo\",\n\"state\": \"São Paulo\",\n\"cep\": \"12345-678\",\n\"cpf\": \"123.456.789-00\",\n\"district\": \"Jardim das Flores\",\n\"speciality\": \"Cardiologista\",\n\"crm\": \"1234SP\"\n}\n"
+            },
+            "parameters": [],
+            "headers": [
+                {
+                    "id": "pair_8f7bace5eeb9437ea1858aa9cf12a2a2",
+                    "name": "Content-Type",
+                    "value": "application/json"
+                }
+            ],
+            "authentication": { "token": "", "type": "bearer" },
+            "metaSortKey": -1673129018949,
+            "isPrivate": false,
+            "settingStoreCookies": true,
+            "settingSendCookies": true,
+            "settingDisableRenderRequestBody": false,
+            "settingEncodeUrl": true,
+            "settingRebuildPath": true,
+            "settingFollowRedirects": "global",
+            "_type": "request"
+        },
+        {
+            "_id": "req_cba9fb3b157a43d7864b6457dfea266c",
+            "parentId": "fld_aa74f7ed9a414823a4afdcdd0d5e8196",
+            "modified": 1673756194641,
+            "created": 1672960958291,
+            "url": "{{ base_url  }}/{{ resource  }}",
+            "name": "Update-Doctor",
+            "description": "",
+            "method": "PUT",
+            "body": {
+                "mimeType": "application/json",
+                "text": "{\n\t\"cep\": \"1234v56\",\n\t\"cpf\": \"123v456\",\n\t\"address\": \"123v456\",\n\t\"number\": \"1236\",\n\t\"city\": \"123v456\",\n\t\"district\": \"123456\",\n\t\"state\": \"123456\",\t\n\t\"speciality\": \"123456\",\n\t\"crm\": \"dadaaa\"\n}"
+            },
+            "parameters": [],
+            "headers": [
+                { "name": "Content-Type", "value": "application/json" }
+            ],
+            "authentication": {
+                "type": "bearer",
+                "token": "{% response 'body', 'req_cf3c05e410f24fc08f196e9a9dd7adb8', 'b64::JC50b2tlbg==::46b', 'no-history', 60 %}"
+            },
+            "metaSortKey": -1673129018899,
+            "isPrivate": false,
+            "settingStoreCookies": true,
+            "settingSendCookies": true,
+            "settingDisableRenderRequestBody": false,
+            "settingEncodeUrl": true,
+            "settingRebuildPath": true,
+            "settingFollowRedirects": "global",
+            "_type": "request"
+        },
+        {
+            "_id": "env_eecdeabfa88846e097ae808ea8ab0f2d6473b846",
+            "parentId": "wrk_469e2b2fdab4472db29462e16dee00af",
+            "modified": 1590108453887,
+            "created": 1586901706040,
+            "name": "Base Environment",
+            "data": {
+                "base_url": "http://localhost:3333",
+                "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE1OTAxMDg0NDQsImV4cCI6MTU5MDE5NDg0NCwic3ViIjoiODMxNTE4ODQtYzliOS00YzdlLWJiOTctZGJkODFlOWYzNjQ4In0.iRZuUYQAxbdyYKbpPa2BN7ZxiPBJymEXP5yxtcRtUeA"
+            },
+            "dataPropertyOrder": { "&": ["base_url", "token"] },
+            "color": null,
+            "isPrivate": false,
+            "metaSortKey": 1586901706040,
+            "_type": "environment"
+        },
+        {
+            "_id": "jar_9be17c57c102086554d8d88c67dfe6ad6fa3c30b",
+            "parentId": "wrk_469e2b2fdab4472db29462e16dee00af",
+            "modified": 1586901706065,
+            "created": 1586901706065,
+            "name": "Default Jar",
+            "cookies": [],
+            "_type": "cookie_jar"
+        },
+        {
+            "_id": "spc_67bd0c3fa0d747e2a442f74d7b93bd47",
+            "parentId": "wrk_469e2b2fdab4472db29462e16dee00af",
+            "modified": 1672706500666,
+            "created": 1672706500666,
+            "fileName": "GoBarber 2020",
+            "contents": "",
+            "contentType": "yaml",
+            "_type": "api_spec"
+        },
+        {
+            "_id": "env_b6c04d6e04874b328c09bc7c774ff830",
+            "parentId": "env_eecdeabfa88846e097ae808ea8ab0f2d6473b846",
+            "modified": 1674501837006,
+            "created": 1590110473228,
+            "name": "dev",
+            "data": {
+                "base_url": "http://localhost:3333",
+                "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE1OTAxMDg0NDQsImV4cCI6MTU5MDE5NDg0NCwic3ViIjoiODMxNTE4ODQtYzliOS00YzdlLWJiOTctZGJkODFlOWYzNjQ4In0.iRZuUYQAxbdyYKbpPa2BN7ZxiPBJymEXP5yxtcRtUeA"
+            },
+            "dataPropertyOrder": { "&": ["base_url", "token"] },
+            "color": "#7d69cb",
+            "isPrivate": false,
+            "metaSortKey": 1590110473228,
+            "_type": "environment"
+        },
+        {
+            "_id": "env_dab38405653046d3beb555825992a4af",
+            "parentId": "env_eecdeabfa88846e097ae808ea8ab0f2d6473b846",
+            "modified": 1674509313251,
+            "created": 1590110564582,
+            "name": "prod",
+            "data": {
+                "base_url": "https://humberto.online",
+                "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE1OTAxMDg0NDQsImV4cCI6MTU5MDE5NDg0NCwic3ViIjoiODMxNTE4ODQtYzliOS00YzdlLWJiOTctZGJkODFlOWYzNjQ4In0.iRZuUYQAxbdyYKbpPa2BN7ZxiPBJymEXP5yxtcRtUeA"
+            },
+            "dataPropertyOrder": { "&": ["base_url", "token"] },
+            "color": "#69cb6b",
+            "isPrivate": false,
+            "metaSortKey": 1590110564582,
+            "_type": "environment"
+        }
+    ]
+}
